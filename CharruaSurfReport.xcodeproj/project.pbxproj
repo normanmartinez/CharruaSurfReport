@@ -22,6 +22,7 @@
 		949EDA7E19AD507000F4955B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EDA6219AD506F00F4955B /* CoreData.framework */; };
 		949EDA8619AD507000F4955B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 949EDA8419AD507000F4955B /* InfoPlist.strings */; };
 		949EDA8819AD507000F4955B /* CharruaSurfReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 949EDA8719AD507000F4955B /* CharruaSurfReportTests.m */; };
+		949EDA9219AD509C00F4955B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949EDA9119AD509C00F4955B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		949EDA8319AD507000F4955B /* CharruaSurfReportTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CharruaSurfReportTests-Info.plist"; sourceTree = "<group>"; };
 		949EDA8519AD507000F4955B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		949EDA8719AD507000F4955B /* CharruaSurfReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharruaSurfReportTests.m; sourceTree = "<group>"; };
+		949EDA9119AD509C00F4955B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				949EDA6E19AD507000F4955B /* NMAppDelegate.m */,
 				949EDA7319AD507000F4955B /* Images.xcassets */,
 				949EDA7019AD507000F4955B /* CharruaSurfReport.xcdatamodeld */,
+				949EDA9119AD509C00F4955B /* Main.storyboard */,
 				949EDA6519AD506F00F4955B /* Supporting Files */,
 			);
 			path = CharruaSurfReport;
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949EDA9219AD509C00F4955B /* Main.storyboard in Resources */,
 				949EDA6919AD507000F4955B /* InfoPlist.strings in Resources */,
 				949EDA7419AD507000F4955B /* Images.xcassets in Resources */,
 			);
