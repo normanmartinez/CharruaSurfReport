@@ -16,9 +16,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-        NSString *algo=nil;
+    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *navigationController = (UINavigationController *)[[tabController viewControllers] objectAtIndex:0];
     
-       return YES;
+    //PicosLista
+    NMPicosListaTableViewController *picosLista =(NMPicosListaTableViewController *)[[navigationController viewControllers] objectAtIndex:0];
+    picosLista.managedObjectContext=self.managedObjectContext;
+    
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

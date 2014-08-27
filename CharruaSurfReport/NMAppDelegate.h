@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NMPicosListaTableViewController.h"
 
 @interface NMAppDelegate : UIResponder <UIApplicationDelegate>
 

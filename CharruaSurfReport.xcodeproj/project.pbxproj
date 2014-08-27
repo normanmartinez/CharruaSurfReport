@@ -150,12 +150,12 @@
 		949EDA6419AD506F00F4955B /* CharruaSurfReport */ = {
 			isa = PBXGroup;
 			children = (
+				949EDA6D19AD507000F4955B /* NMAppDelegate.h */,
+				949EDA6E19AD507000F4955B /* NMAppDelegate.m */,
 				948AF5DA19AD6655003DAF76 /* Picos */,
 				948AF5DB19AD665C003DAF76 /* Ubicar */,
 				948AF5DC19AD6665003DAF76 /* Condicion */,
 				948AF5DD19AD666C003DAF76 /* Notificacion */,
-				949EDA6D19AD507000F4955B /* NMAppDelegate.h */,
-				949EDA6E19AD507000F4955B /* NMAppDelegate.m */,
 				949EDA7319AD507000F4955B /* Images.xcassets */,
 				949EDA7019AD507000F4955B /* CharruaSurfReport.xcdatamodeld */,
 				949EDA9119AD509C00F4955B /* Main.storyboard */,
