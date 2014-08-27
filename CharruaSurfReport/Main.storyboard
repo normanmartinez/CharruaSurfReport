@@ -28,12 +28,37 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Picos" id="htA-uP-Rzh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="R9u-J0-6Ir"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="R9u-J0-6Ir">
+                            <connections>
+                                <segue destination="4Ic-yv-EV7" kind="push" id="hNA-Ib-hXf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Krh-TO-Mtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503" y="-1090"/>
+            <point key="canvasLocation" x="1453" y="-1090"/>
+        </scene>
+        <!--Picos Agregariew Controller - Agregar Pico-->
+        <scene sceneID="exQ-lp-c1j">
+            <objects>
+                <viewController id="4Ic-yv-EV7" customClass="NMVPicosAgregariewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fc6-L5-J8Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vse-rN-SV0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eXO-lt-N9y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Agregar Pico" id="ldj-dg-Y5S">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Q0l-eK-alA"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LlY-bG-Zc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="-1085"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h7d-3g-3Ls">
