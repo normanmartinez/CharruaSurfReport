@@ -23,6 +23,7 @@
 		949EDA8619AD507000F4955B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 949EDA8419AD507000F4955B /* InfoPlist.strings */; };
 		949EDA8819AD507000F4955B /* CharruaSurfReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 949EDA8719AD507000F4955B /* CharruaSurfReportTests.m */; };
 		949EDA9219AD509C00F4955B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949EDA9119AD509C00F4955B /* Main.storyboard */; };
+		94BC25F019AE93CE00704352 /* Pico.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC25EF19AE93CE00704352 /* Pico.m */; };
 		94DE699619AE7606008C2F41 /* NMPicosListaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DE699519AE7606008C2F41 /* NMPicosListaTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		949EDA8519AD507000F4955B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		949EDA8719AD507000F4955B /* CharruaSurfReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharruaSurfReportTests.m; sourceTree = "<group>"; };
 		949EDA9119AD509C00F4955B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		94BC25EE19AE93CE00704352 /* Pico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pico.h; sourceTree = "<group>"; };
+		94BC25EF19AE93CE00704352 /* Pico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pico.m; sourceTree = "<group>"; };
 		94DE699419AE7606008C2F41 /* NMPicosListaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMPicosListaTableViewController.h; sourceTree = "<group>"; };
 		94DE699519AE7606008C2F41 /* NMPicosListaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMPicosListaTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +94,8 @@
 			children = (
 				94DE699419AE7606008C2F41 /* NMPicosListaTableViewController.h */,
 				94DE699519AE7606008C2F41 /* NMPicosListaTableViewController.m */,
+				94BC25EE19AE93CE00704352 /* Pico.h */,
+				94BC25EF19AE93CE00704352 /* Pico.m */,
 			);
 			name = Picos;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94BC25F019AE93CE00704352 /* Pico.m in Sources */,
 				949EDA6B19AD507000F4955B /* main.m in Sources */,
 				949EDA6F19AD507000F4955B /* NMAppDelegate.m in Sources */,
 				949EDA7219AD507000F4955B /* CharruaSurfReport.xcdatamodeld in Sources */,

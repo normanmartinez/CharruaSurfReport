@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pico.h"
 
-@interface NMPicosListaTableViewController : UITableViewController
+@interface NMPicosListaTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
