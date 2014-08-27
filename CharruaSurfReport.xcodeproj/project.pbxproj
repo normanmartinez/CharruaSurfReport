@@ -83,6 +83,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		948AF5DA19AD6655003DAF76 /* Picos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Picos;
+			sourceTree = "<group>";
+		};
+		948AF5DB19AD665C003DAF76 /* Ubicar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Ubicar;
+			sourceTree = "<group>";
+		};
+		948AF5DC19AD6665003DAF76 /* Condicion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Condicion;
+			sourceTree = "<group>";
+		};
+		948AF5DD19AD666C003DAF76 /* Notificacion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Notificacion;
+			sourceTree = "<group>";
+		};
 		949EDA5019AD506F00F4955B = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +145,10 @@
 		949EDA6419AD506F00F4955B /* CharruaSurfReport */ = {
 			isa = PBXGroup;
 			children = (
+				948AF5DA19AD6655003DAF76 /* Picos */,
+				948AF5DB19AD665C003DAF76 /* Ubicar */,
+				948AF5DC19AD6665003DAF76 /* Condicion */,
+				948AF5DD19AD666C003DAF76 /* Notificacion */,
 				949EDA6D19AD507000F4955B /* NMAppDelegate.h */,
 				949EDA6E19AD507000F4955B /* NMAppDelegate.m */,
 				949EDA7319AD507000F4955B /* Images.xcassets */,
@@ -375,6 +407,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharruaSurfReport/CharruaSurfReport-Prefix.pch";
 				INFOPLIST_FILE = "CharruaSurfReport/CharruaSurfReport-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -388,6 +421,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharruaSurfReport/CharruaSurfReport-Prefix.pch";
 				INFOPLIST_FILE = "CharruaSurfReport/CharruaSurfReport-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -452,6 +486,7 @@
 				949EDA8D19AD507000F4955B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		949EDA8E19AD507000F4955B /* Build configuration list for PBXNativeTarget "CharruaSurfReportTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +495,7 @@
 				949EDA9019AD507000F4955B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
