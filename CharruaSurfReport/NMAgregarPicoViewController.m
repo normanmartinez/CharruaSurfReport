@@ -1,20 +1,18 @@
 //
-//  NMVPicosAgregariewController.m
+//  NMAgregarPicoViewController.m
 //  CharruaSurfReport
 //
-//  Created by norman martinez on 27/08/14.
+//  Created by norman martinez on 28/08/14.
 //  Copyright (c) 2014 NMDevelopment. All rights reserved.
 //
 
-#import "NMVPicosAgregariewController.h"
+#import "NMAgregarPicoViewController.h"
 
-@interface NMVPicosAgregariewController ()
+@interface NMAgregarPicoViewController ()
 
 @end
 
-@implementation NMVPicosAgregariewController
-
-@synthesize map  = _map;
+@implementation NMAgregarPicoViewController
 @synthesize currentLocation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -29,18 +27,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //trae la posición actual
-    
+    // Do any additional setup after loading the view.
+    [self getCurrentPosition];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    [self getCurrentPosition];
 }
-
 
 //Recupera la posición actual del usuario
 -(void)getCurrentPosition
@@ -61,8 +56,8 @@
     // Create a mapkit region based on the location
     // Span defines the area covered by the map in degrees
     MKCoordinateSpan span;
-    span.latitudeDelta = 0.05;
-    span.longitudeDelta = 0.05;
+    span.latitudeDelta = 0.03;
+    span.longitudeDelta = 0.03;
     
     // Region struct defines the map to show based on center coordinate and span
     MKCoordinateRegion region;
@@ -76,16 +71,5 @@
     [manager stopUpdatingLocation];
     
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

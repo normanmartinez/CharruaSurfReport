@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface NMVPicosAgregariewController : UIViewController <MKMapViewDelegate> {
+@interface NMVPicosAgregariewController : UIViewController <CLLocationManagerDelegate,MKMapViewDelegate> {
 	IBOutlet MKMapView* _map;
     NSMutableArray *_currentAnnotations;
     NSString *tempUrl;
@@ -17,5 +18,6 @@
 }
 
 @property (nonatomic, strong) IBOutlet MKMapView *map;
+@property (nonatomic, retain) CLLocation* currentLocation;
 
 @end

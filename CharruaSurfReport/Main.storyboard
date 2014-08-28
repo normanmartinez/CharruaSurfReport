@@ -30,7 +30,7 @@
                     <navigationItem key="navigationItem" title="Picos" id="htA-uP-Rzh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="R9u-J0-6Ir">
                             <connections>
-                                <segue destination="4Ic-yv-EV7" kind="push" id="hNA-Ib-hXf"/>
+                                <segue destination="Thy-n0-YZ1" kind="push" id="bQu-gZ-VuA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -39,32 +39,35 @@
             </objects>
             <point key="canvasLocation" x="1453" y="-1090"/>
         </scene>
-        <!--Picos Agregariew Controller - Agregar Pico-->
-        <scene sceneID="exQ-lp-c1j">
+        <!--Agregar Pico View Controller - Agregar Pico-->
+        <scene sceneID="HL1-RZ-Cep">
             <objects>
-                <viewController id="4Ic-yv-EV7" customClass="NMVPicosAgregariewController" sceneMemberID="viewController">
+                <viewController id="Thy-n0-YZ1" customClass="NMAgregarPicoViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Fc6-L5-J8Q"/>
-                        <viewControllerLayoutGuide type="bottom" id="Vse-rN-SV0"/>
+                        <viewControllerLayoutGuide type="top" id="6yz-DA-xpL"/>
+                        <viewControllerLayoutGuide type="bottom" id="pq9-u3-ArR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eXO-lt-N9y">
+                    <view key="view" contentMode="scaleToFill" id="N1m-oV-1EX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iLv-7i-Vje">
-                                <rect key="frame" x="0.0" y="120" width="320" height="397"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wOD-XV-LxH">
+                                <rect key="frame" x="0.0" y="122" width="320" height="398"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Agregar Pico" id="ldj-dg-Y5S">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Q0l-eK-alA"/>
+                    <navigationItem key="navigationItem" title="Agregar Pico" id="4Tk-Xt-0sn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8aH-w7-Ixh"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="map" destination="wOD-XV-LxH" id="wbW-pY-rUY"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LlY-bG-Zc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kMy-7n-HfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1919" y="-1085"/>
+            <point key="canvasLocation" x="1877" y="-1090"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h7d-3g-3Ls">
