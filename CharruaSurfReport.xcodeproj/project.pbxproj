@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94507D0019AF6F2400BB0944 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94507CFF19AF6F2400BB0944 /* MapKit.framework */; };
 		949EDA5D19AD506F00F4955B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EDA5C19AD506F00F4955B /* Foundation.framework */; };
 		949EDA5F19AD506F00F4955B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EDA5E19AD506F00F4955B /* CoreGraphics.framework */; };
 		949EDA6119AD506F00F4955B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EDA6019AD506F00F4955B /* UIKit.framework */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94507CFF19AF6F2400BB0944 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		949EDA5919AD506F00F4955B /* CharruaSurfReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharruaSurfReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949EDA5C19AD506F00F4955B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		949EDA5E19AD506F00F4955B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94507D0019AF6F2400BB0944 /* MapKit.framework in Frameworks */,
 				949EDA5F19AD506F00F4955B /* CoreGraphics.framework in Frameworks */,
 				949EDA6319AD506F00F4955B /* CoreData.framework in Frameworks */,
 				949EDA6119AD506F00F4955B /* UIKit.framework in Frameworks */,
@@ -148,6 +151,7 @@
 		949EDA5B19AD506F00F4955B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94507CFF19AF6F2400BB0944 /* MapKit.framework */,
 				949EDA5C19AD506F00F4955B /* Foundation.framework */,
 				949EDA5E19AD506F00F4955B /* CoreGraphics.framework */,
 				949EDA6019AD506F00F4955B /* UIKit.framework */,

@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface NMVPicosAgregariewController : UIViewController
+@interface NMVPicosAgregariewController : UIViewController <MKMapViewDelegate> {
+	IBOutlet MKMapView* _map;
+    NSMutableArray *_currentAnnotations;
+    NSString *tempUrl;
+    UIButton *closeButton;
+}
+
+@property (nonatomic, strong) IBOutlet MKMapView *map;
 
 @end

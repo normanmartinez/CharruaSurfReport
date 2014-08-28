@@ -14,6 +14,8 @@
 
 @implementation NMVPicosAgregariewController
 
+@synthesize map  = _map;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,13 +28,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //trae la posición actual
+    [self getCurrentPosition];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//Recupera la posición actual del usuario
+-(void)getCurrentPosition
+{
+    _map.delegate = self;
+	MKCoordinateRegion newRegion;
+	CLLocationManager *locmng = [[CLLocationManager alloc] init];
+	newRegion.center.latitude = locmng.location.coordinate.latitude;
+	newRegion.center.longitude = locmng.location.coordinate.longitude;
+	newRegion.span.latitudeDelta = 0.03;
+	newRegion.span.longitudeDelta = 0.03;
+	[self.map setRegion:newRegion animated:YES];
+    _currentAnnotations = [[NSMutableArray alloc] init];
+    self.map.showsUserLocation = YES;
 }
 
 /*
