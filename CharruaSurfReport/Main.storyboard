@@ -30,7 +30,7 @@
                     <navigationItem key="navigationItem" title="Picos" id="htA-uP-Rzh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="R9u-J0-6Ir">
                             <connections>
-                                <segue destination="Thy-n0-YZ1" kind="push" id="bQu-gZ-VuA"/>
+                                <segue destination="Thy-n0-YZ1" kind="push" identifier="localizarPico" id="bQu-gZ-VuA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1453" y="-1090"/>
         </scene>
-        <!--Agregar Pico View Controller - Localizar-->
+        <!--Localizar Pico View Controller - Localizar-->
         <scene sceneID="HL1-RZ-Cep">
             <objects>
-                <viewController id="Thy-n0-YZ1" customClass="NMAgregarPicoViewController" sceneMemberID="viewController">
+                <viewController id="Thy-n0-YZ1" customClass="NMLocalizarPicoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6yz-DA-xpL"/>
                         <viewControllerLayoutGuide type="bottom" id="pq9-u3-ArR"/>
@@ -65,7 +65,7 @@
                                 </state>
                                 <connections>
                                     <action selector="agregarPico:" destination="Thy-n0-YZ1" eventType="touchUpInside" id="5S2-9C-SbP"/>
-                                    <segue destination="HbF-W5-etT" kind="push" id="y6i-zY-WEa"/>
+                                    <segue destination="e8V-bX-o2O" kind="modal" identifier="salvarPico" id="y6i-zY-WEa"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="diana" translatesAutoresizingMaskIntoConstraints="NO" id="FAw-w4-tCH">
@@ -121,13 +121,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXI-dm-ovR">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXI-dm-ovR">
                                 <rect key="frame" x="86" y="172" width="214" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acq-99-50l">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acq-99-50l">
                                 <rect key="frame" x="86" y="200" width="214" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -137,12 +137,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Salvar" id="CIt-oI-1V6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="IbI-2f-QlZ"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VAx-QS-BPE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="IbI-2f-QlZ">
+                            <connections>
+                                <action selector="salvarPico:" destination="HbF-W5-etT" id="mzO-ne-gib"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lblLatitud" destination="dXI-dm-ovR" id="DnT-kF-zqN"/>
+                        <outlet property="lblLongitud" destination="acq-99-50l" id="WLe-tC-L9O"/>
+                        <outlet property="txtNombrePico" destination="0HK-QC-aUH" id="DI2-9o-9h4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJ3-Uu-t1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2335" y="-1090"/>
+            <point key="canvasLocation" x="2861" y="-1090"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h7d-3g-3Ls">
@@ -307,6 +317,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qx7-B9-bVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1013" y="1225"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SzC-7q-tGv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e8V-bX-o2O" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="36F-I6-Fh9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Jg-e7-qjg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HbF-W5-etT" kind="relationship" relationship="rootViewController" id="EWz-tg-3oJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8v3-W7-K3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2335" y="-1090"/>
         </scene>
     </scenes>
     <resources>

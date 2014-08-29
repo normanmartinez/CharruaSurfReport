@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pico.h"
 
-@interface NMSalvarPicoViewController : UIViewController
+@class NMSalvarPicoViewController;
+@protocol NMSalvarPicoViewControllerDelegate <NSObject>
+
+
+@end
+
+@interface NMSalvarPicoViewController : UIViewController <UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextField *txtNombrePico;
+@property (strong, nonatomic) IBOutlet UILabel *lblLatitud;
+@property (strong, nonatomic) IBOutlet UILabel *lblLongitud;
+
+@property (retain,nonatomic) NSDecimalNumber *latitud;
+@property (retain,nonatomic) NSDecimalNumber *longitud;
+
+@property (nonatomic,weak) id<NMSalvarPicoViewControllerDelegate> delegate;
+
+- (IBAction)salvarPico:(id)sender;
 
 @end

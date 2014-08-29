@@ -6,14 +6,19 @@
 //  Copyright (c) 2014 NMDevelopment. All rights reserved.
 //
 
-#import "NMAgregarPicoViewController.h"
+#import "NMLocalizarPicoViewController.h"
 
-@interface NMAgregarPicoViewController ()
+@interface NMLocalizarPicoViewController ()
 
 @end
 
-@implementation NMAgregarPicoViewController
+@implementation NMLocalizarPicoViewController
+
 @synthesize currentLocation,locationManager;
+
+NSDecimalNumber *latitudActual;
+NSDecimalNumber *longitudActual;
+Pico *pico;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,12 +53,11 @@
     self.map.showsUserLocation = YES;
 }
 
+/*
 // Called when the location manager determines that there is a new location
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations
 {
-    
-    /*
     CLLocation *newLocation = [locations lastObject];
     if (newLocation.verticalAccuracy < 0 ||
         newLocation.horizontalAccuracy < 0) {
@@ -69,14 +73,30 @@
     MKCoordinateRegion region;
     region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate,100, 100);
     [self.map setRegion:region animated:YES];
-     */
 }
+ */
 
 //valido la latitud y longitud del centro
 - (IBAction)agregarPico:(id)sender
 {
     CLLocationCoordinate2D centre = [self.map centerCoordinate];
-    NSLog(@"%f",centre.latitude);
-    NSLog(@"%f",centre.longitude);
+    latitudActual=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.latitude];
+    longitudActual= (NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.longitude];
 }
+
+#pragma mark - Table view delegate
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UINavigationController *navigationController = segue.destinationViewController;
+    //importante para ligar el delegado
+    if ([[segue identifier] isEqualToString:@"salvarPico"])
+    {
+        NMSalvarPicoViewController *salvarPico=[[navigationController viewControllers] objectAtIndex:0];
+        salvarPico.delegate=self;
+        NSLog(@"%@",latitudActual);
+        salvarPico.latitud=latitudActual;
+        salvarPico.longitud=longitudActual;
+    }
+}
+
 @end

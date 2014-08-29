@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+
 #import "Pico.h"
+#import "NMSalvarPicoViewController.h"
 
 
-@interface NMAgregarPicoViewController : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate>
+@interface NMLocalizarPicoViewController : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate,NMSalvarPicoViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property (nonatomic, retain) CLLocation* currentLocation;

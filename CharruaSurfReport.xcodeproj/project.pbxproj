@@ -11,7 +11,7 @@
 		9406D78819B0F41900CD93DC /* NMSalvarPicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9406D78719B0F41900CD93DC /* NMSalvarPicoViewController.m */; };
 		94507D0019AF6F2400BB0944 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94507CFF19AF6F2400BB0944 /* MapKit.framework */; };
 		945842F619AF87230034E2B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945842F519AF87230034E2B5 /* CoreLocation.framework */; };
-		9458433E19AF97620034E2B5 /* NMAgregarPicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9458433D19AF97620034E2B5 /* NMAgregarPicoViewController.m */; };
+		9458433E19AF97620034E2B5 /* NMLocalizarPicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9458433D19AF97620034E2B5 /* NMLocalizarPicoViewController.m */; };
 		949EDA5D19AD506F00F4955B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EDA5C19AD506F00F4955B /* Foundation.framework */; };
 		949EDA5F19AD506F00F4955B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EDA5E19AD506F00F4955B /* CoreGraphics.framework */; };
 		949EDA6119AD506F00F4955B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EDA6019AD506F00F4955B /* UIKit.framework */; };
@@ -48,8 +48,8 @@
 		9406D78719B0F41900CD93DC /* NMSalvarPicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSalvarPicoViewController.m; sourceTree = "<group>"; };
 		94507CFF19AF6F2400BB0944 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		945842F519AF87230034E2B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		9458433C19AF97620034E2B5 /* NMAgregarPicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMAgregarPicoViewController.h; sourceTree = "<group>"; };
-		9458433D19AF97620034E2B5 /* NMAgregarPicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMAgregarPicoViewController.m; sourceTree = "<group>"; };
+		9458433C19AF97620034E2B5 /* NMLocalizarPicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMLocalizarPicoViewController.h; sourceTree = "<group>"; };
+		9458433D19AF97620034E2B5 /* NMLocalizarPicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMLocalizarPicoViewController.m; sourceTree = "<group>"; };
 		949EDA5919AD506F00F4955B /* CharruaSurfReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharruaSurfReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949EDA5C19AD506F00F4955B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		949EDA5E19AD506F00F4955B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,8 +116,8 @@
 			children = (
 				94DE699419AE7606008C2F41 /* NMPicosListaTableViewController.h */,
 				94DE699519AE7606008C2F41 /* NMPicosListaTableViewController.m */,
-				9458433C19AF97620034E2B5 /* NMAgregarPicoViewController.h */,
-				9458433D19AF97620034E2B5 /* NMAgregarPicoViewController.m */,
+				9458433C19AF97620034E2B5 /* NMLocalizarPicoViewController.h */,
+				9458433D19AF97620034E2B5 /* NMLocalizarPicoViewController.m */,
 				9406D78619B0F41900CD93DC /* NMSalvarPicoViewController.h */,
 				9406D78719B0F41900CD93DC /* NMSalvarPicoViewController.m */,
 				94BC25EE19AE93CE00704352 /* Pico.h */,
@@ -333,7 +333,7 @@
 				949EDA6F19AD507000F4955B /* NMAppDelegate.m in Sources */,
 				949EDA7219AD507000F4955B /* CharruaSurfReport.xcdatamodeld in Sources */,
 				9406D78819B0F41900CD93DC /* NMSalvarPicoViewController.m in Sources */,
-				9458433E19AF97620034E2B5 /* NMAgregarPicoViewController.m in Sources */,
+				9458433E19AF97620034E2B5 /* NMLocalizarPicoViewController.m in Sources */,
 				94DE699619AE7606008C2F41 /* NMPicosListaTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
