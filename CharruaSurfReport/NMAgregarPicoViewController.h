@@ -15,4 +15,5 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property (nonatomic, retain) CLLocation* currentLocation;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @end

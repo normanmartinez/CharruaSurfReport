@@ -13,7 +13,7 @@
 @end
 
 @implementation NMAgregarPicoViewController
-@synthesize currentLocation;
+@synthesize currentLocation,locationManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,36 +40,36 @@
 //Recupera la posición actual del usuario
 -(void)getCurrentPosition
 {
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    [locationManager setDelegate:self];
-    [locationManager startUpdatingLocation];
-    [self.map setDelegate:self];
+    locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+    
     self.map.showsUserLocation = YES;
 }
 
 // Called when the location manager determines that there is a new location
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations {
 {
-    self.currentLocation = newLocation;
+    CLLocation *newLocation = [locations lastObject];
+    if (newLocation.verticalAccuracy < 0 ||
+        newLocation.horizontalAccuracy < 0) {
+        // invalid accuracy
+        return;
+    }
     
-    // Create a mapkit region based on the location
-    // Span defines the area covered by the map in degrees
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.03;
-    span.longitudeDelta = 0.03;
-    
-    // Region struct defines the map to show based on center coordinate and span
+    if (newLocation.horizontalAccuracy > 100 ||
+        newLocation.verticalAccuracy > 50) {
+        // accuracy radius is so large, we don't want to use it
+        return;
+    }
     MKCoordinateRegion region;
-    region.center = newLocation.coordinate;
-    region.span = span;
-    
-    // Update the map to display the current location
+    region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate,100, 100);
     [self.map setRegion:region animated:YES];
     
-    // Stop core location services to conserve battery
-    [manager stopUpdatingLocation];
-    
+}
+
 }
 
 @end
