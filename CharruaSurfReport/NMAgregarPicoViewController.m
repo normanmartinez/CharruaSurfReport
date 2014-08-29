@@ -50,8 +50,9 @@
 
 // Called when the location manager determines that there is a new location
 - (void)locationManager:(CLLocationManager *)manager
-     didUpdateLocations:(NSArray *)locations {
+     didUpdateLocations:(NSArray *)locations
 {
+    
     /*
     CLLocation *newLocation = [locations lastObject];
     if (newLocation.verticalAccuracy < 0 ||
@@ -71,6 +72,11 @@
      */
 }
 
+//valido la latitud y longitud del centro
+- (IBAction)agregarPico:(id)sender
+{
+    CLLocationCoordinate2D centre = [self.map centerCoordinate];
+    NSLog(@"%f",centre.latitude);
+    NSLog(@"%f",centre.longitude);
 }
-
 @end

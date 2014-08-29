@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Pico.h"
 
 
 @interface NMAgregarPicoViewController : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate>
@@ -16,4 +17,7 @@
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property (nonatomic, retain) CLLocation* currentLocation;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+
+- (IBAction)agregarPico:(id)sender;
+
 @end
