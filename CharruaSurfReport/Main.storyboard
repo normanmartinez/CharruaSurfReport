@@ -37,7 +37,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Krh-TO-Mtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453" y="-1090"/>
+            <point key="canvasLocation" x="1449" y="-609"/>
         </scene>
         <!--Localizar Pico View Controller - Localizar-->
         <scene sceneID="HL1-RZ-Cep">
@@ -58,7 +58,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3n-JF-xQs">
                                 <rect key="frame" x="0.0" y="470" width="320" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Agregar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMy-7n-HfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="-1090"/>
+            <point key="canvasLocation" x="1873" y="-609"/>
         </scene>
         <!--Salvar Pico View Controller - Salvar-->
         <scene sceneID="lxo-Pd-bj0">
@@ -137,7 +137,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Salvar" id="CIt-oI-1V6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VAx-QS-BPE"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VAx-QS-BPE">
+                            <connections>
+                                <action selector="cancelarPico:" destination="HbF-W5-etT" id="hp1-6C-GQZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="IbI-2f-QlZ">
                             <connections>
                                 <action selector="salvarPico:" destination="HbF-W5-etT" id="mzO-ne-gib"/>
@@ -152,12 +156,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJ3-Uu-t1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2861" y="-1090"/>
+            <point key="canvasLocation" x="2857" y="-609"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h7d-3g-3Ls">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="Khv-f0-Znp" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" id="Khv-f0-Znp" colorLabel="IBBuiltInLabel-Green" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="hRD-5h-yRe">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -167,42 +171,12 @@
                     <connections>
                         <segue destination="iy4-Th-qVO" kind="relationship" relationship="viewControllers" id="2KQ-SJ-oaj"/>
                         <segue destination="89d-zB-Gho" kind="relationship" relationship="viewControllers" id="apg-Ky-JMG"/>
-                        <segue destination="FDe-Pa-KFM" kind="relationship" relationship="viewControllers" id="aMm-WZ-Uv8"/>
                         <segue destination="eO3-WV-BgT" kind="relationship" relationship="viewControllers" id="QVj-Ch-GCO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtj-0R-IdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="412" y="154"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="cCG-Tk-qFE">
-            <objects>
-                <tableViewController id="ToM-jr-N0t" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5LW-FE-UX0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="WMo-P8-XKM">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WMo-P8-XKM" id="eMm-kU-36S">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ToM-jr-N0t" id="vYt-W6-iua"/>
-                            <outlet property="delegate" destination="ToM-jr-N0t" id="yut-mH-ism"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="dq7-lU-cVg"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GSk-Qt-RcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1528" y="465"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="D6T-lq-C9r">
@@ -221,13 +195,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YiW-b7-nvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="-327"/>
+            <point key="canvasLocation" x="1512" y="154"/>
         </scene>
-        <!--Navigation Controller - Ubicar-->
+        <!--Navigation Controller - Llegar al Pico-->
         <scene sceneID="5wg-MJ-aF5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="89d-zB-Gho" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Ubicar" id="n6Y-pP-UaP"/>
+                    <tabBarItem key="tabBarItem" title="Llegar al Pico" image="cardir" id="n6Y-pP-UaP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pNv-un-CtE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -240,13 +214,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OH7-YZ-pwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="-327"/>
+            <point key="canvasLocation" x="986" y="154"/>
         </scene>
         <!--Navigation Controller - Picos-->
         <scene sceneID="Mva-QD-qZa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iy4-Th-qVO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Picos" id="gln-1p-8b0"/>
+                    <tabBarItem key="tabBarItem" title="Picos" image="beach" id="gln-1p-8b0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nke-Z4-bS7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -259,26 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwu-DW-54Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-1090"/>
-        </scene>
-        <!--Navigation Controller - Condición-->
-        <scene sceneID="9Df-rj-qaM">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FDe-Pa-KFM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Condición" id="7dj-iw-RLZ"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8q1-dj-ZK8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ToM-jr-N0t" kind="relationship" relationship="rootViewController" id="a8E-c4-unI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jad-0P-iMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1002" y="465"/>
+            <point key="canvasLocation" x="973" y="-609"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4Sj-li-eU1">
@@ -297,13 +252,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3Y-yE-iT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1539" y="1225"/>
+            <point key="canvasLocation" x="1512" y="893"/>
         </scene>
         <!--Navigation Controller - Notificación-->
         <scene sceneID="IO3-R9-gsv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eO3-WV-BgT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notificación" id="tiK-A0-aDl"/>
+                    <tabBarItem key="tabBarItem" title="Notificación" image="icon_share_phone" id="tiK-A0-aDl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="clJ-Wj-QWE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -316,7 +271,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qx7-B9-bVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013" y="1225"/>
+            <point key="canvasLocation" x="986" y="893"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SzC-7q-tGv">
@@ -335,11 +290,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8v3-W7-K3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2335" y="-1090"/>
+            <point key="canvasLocation" x="2331" y="-609"/>
         </scene>
     </scenes>
     <resources>
+        <image name="beach" width="26" height="26"/>
+        <image name="cardir" width="26" height="26"/>
         <image name="diana" width="64" height="64"/>
+        <image name="icon_share_phone" width="26" height="26"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

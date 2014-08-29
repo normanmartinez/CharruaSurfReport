@@ -12,6 +12,9 @@
 		94507D0019AF6F2400BB0944 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94507CFF19AF6F2400BB0944 /* MapKit.framework */; };
 		945842F619AF87230034E2B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945842F519AF87230034E2B5 /* CoreLocation.framework */; };
 		9458433E19AF97620034E2B5 /* NMLocalizarPicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9458433D19AF97620034E2B5 /* NMLocalizarPicoViewController.m */; };
+		9466873719B120800069FF18 /* beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 9466873619B120800069FF18 /* beach.png */; };
+		9466873919B120F90069FF18 /* cardir.png in Resources */ = {isa = PBXBuildFile; fileRef = 9466873819B120F90069FF18 /* cardir.png */; };
+		9466873B19B121610069FF18 /* icon_share_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9466873A19B121610069FF18 /* icon_share_phone.png */; };
 		949EDA5D19AD506F00F4955B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EDA5C19AD506F00F4955B /* Foundation.framework */; };
 		949EDA5F19AD506F00F4955B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EDA5E19AD506F00F4955B /* CoreGraphics.framework */; };
 		949EDA6119AD506F00F4955B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949EDA6019AD506F00F4955B /* UIKit.framework */; };
@@ -50,6 +53,9 @@
 		945842F519AF87230034E2B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9458433C19AF97620034E2B5 /* NMLocalizarPicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMLocalizarPicoViewController.h; sourceTree = "<group>"; };
 		9458433D19AF97620034E2B5 /* NMLocalizarPicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMLocalizarPicoViewController.m; sourceTree = "<group>"; };
+		9466873619B120800069FF18 /* beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beach.png; sourceTree = "<group>"; };
+		9466873819B120F90069FF18 /* cardir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardir.png; sourceTree = "<group>"; };
+		9466873A19B121610069FF18 /* icon_share_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_share_phone.png; sourceTree = "<group>"; };
 		949EDA5919AD506F00F4955B /* CharruaSurfReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharruaSurfReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		949EDA5C19AD506F00F4955B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		949EDA5E19AD506F00F4955B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,6 +112,9 @@
 		9406D78319B0D01800CD93DC /* imagenes */ = {
 			isa = PBXGroup;
 			children = (
+				9466873A19B121610069FF18 /* icon_share_phone.png */,
+				9466873819B120F90069FF18 /* cardir.png */,
+				9466873619B120800069FF18 /* beach.png */,
 				9406D78419B0D03000CD93DC /* diana.png */,
 			);
 			name = imagenes;
@@ -307,8 +316,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				949EDA9219AD509C00F4955B /* Main.storyboard in Resources */,
+				9466873719B120800069FF18 /* beach.png in Resources */,
+				9466873B19B121610069FF18 /* icon_share_phone.png in Resources */,
 				9406D78519B0D03000CD93DC /* diana.png in Resources */,
 				949EDA6919AD507000F4955B /* InfoPlist.strings in Resources */,
+				9466873919B120F90069FF18 /* cardir.png in Resources */,
 				949EDA7419AD507000F4955B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -52,4 +52,8 @@
 
 - (IBAction)salvarPico:(id)sender {
 }
+
+- (IBAction)cancelarPico:(id)sender {
+    [self.delegate salvarPicoDiDCancel:self];
+}
 @end

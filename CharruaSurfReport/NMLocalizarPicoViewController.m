@@ -84,7 +84,7 @@ Pico *pico;
     longitudActual= (NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.longitude];
 }
 
-#pragma mark - Table view delegate
+#pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UINavigationController *navigationController = segue.destinationViewController;
@@ -93,10 +93,14 @@ Pico *pico;
     {
         NMSalvarPicoViewController *salvarPico=[[navigationController viewControllers] objectAtIndex:0];
         salvarPico.delegate=self;
-        NSLog(@"%@",latitudActual);
         salvarPico.latitud=latitudActual;
         salvarPico.longitud=longitudActual;
     }
+}
+
+-(void)salvarPicoDiDCancel:(NMSalvarPicoViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

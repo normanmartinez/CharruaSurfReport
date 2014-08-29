@@ -12,6 +12,8 @@
 @class NMSalvarPicoViewController;
 @protocol NMSalvarPicoViewControllerDelegate <NSObject>
 
+-(void)salvarPicoDiDCancel:(NMSalvarPicoViewController *)controller;
+-(void)salvarPicoDidAdd:(NMSalvarPicoViewController *)controller didSalvarPico:(Pico *)pico;
 
 @end
 
@@ -27,5 +29,6 @@
 @property (nonatomic,weak) id<NMSalvarPicoViewControllerDelegate> delegate;
 
 - (IBAction)salvarPico:(id)sender;
+- (IBAction)cancelarPico:(id)sender;
 
 @end
