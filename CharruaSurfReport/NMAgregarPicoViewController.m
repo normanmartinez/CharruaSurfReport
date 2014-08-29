@@ -42,7 +42,7 @@
 {
     locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     [self.locationManager startUpdatingLocation];
     
     self.map.showsUserLocation = YES;
@@ -52,6 +52,7 @@
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
 {
+    /*
     CLLocation *newLocation = [locations lastObject];
     if (newLocation.verticalAccuracy < 0 ||
         newLocation.horizontalAccuracy < 0) {
@@ -67,7 +68,7 @@
     MKCoordinateRegion region;
     region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate,100, 100);
     [self.map setRegion:region animated:YES];
-    
+     */
 }
 
 }

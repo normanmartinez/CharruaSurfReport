@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9406D78519B0D03000CD93DC /* diana.png in Resources */ = {isa = PBXBuildFile; fileRef = 9406D78419B0D03000CD93DC /* diana.png */; };
 		94507D0019AF6F2400BB0944 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94507CFF19AF6F2400BB0944 /* MapKit.framework */; };
 		945842F619AF87230034E2B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945842F519AF87230034E2B5 /* CoreLocation.framework */; };
 		9458433E19AF97620034E2B5 /* NMAgregarPicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9458433D19AF97620034E2B5 /* NMAgregarPicoViewController.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9406D78419B0D03000CD93DC /* diana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = diana.png; path = ../../diana.png; sourceTree = "<group>"; };
 		94507CFF19AF6F2400BB0944 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		945842F519AF87230034E2B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9458433C19AF97620034E2B5 /* NMAgregarPicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMAgregarPicoViewController.h; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9406D78319B0D01800CD93DC /* imagenes */ = {
+			isa = PBXGroup;
+			children = (
+				9406D78419B0D03000CD93DC /* diana.png */,
+			);
+			name = imagenes;
+			sourceTree = "<group>";
+		};
 		948AF5DA19AD6655003DAF76 /* Picos */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +195,7 @@
 		949EDA6519AD506F00F4955B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9406D78319B0D01800CD93DC /* imagenes */,
 				949EDA6619AD506F00F4955B /* CharruaSurfReport-Info.plist */,
 				949EDA6719AD507000F4955B /* InfoPlist.strings */,
 				949EDA6A19AD507000F4955B /* main.m */,
@@ -291,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				949EDA9219AD509C00F4955B /* Main.storyboard in Resources */,
+				9406D78519B0D03000CD93DC /* diana.png in Resources */,
 				949EDA6919AD507000F4955B /* InfoPlist.strings in Resources */,
 				949EDA7419AD507000F4955B /* Images.xcassets in Resources */,
 			);
