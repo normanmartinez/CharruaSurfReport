@@ -28,9 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.lblLatitud.text=[self.latitud stringValue];
-    self.lblLongitud.text=[self.longitud stringValue];
+    self.lblLatitud.text=[self.nuevoPico.latitud stringValue];
+    self.lblLongitud.text=[self.nuevoPico.longitud stringValue];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,10 +49,15 @@
 }
 */
 
-- (IBAction)salvarPico:(id)sender {
+- (IBAction)salvarPico:(id)sender
+{
+    [self.nuevoPico setNombrePico:self.txtNombrePico.text];
+    [self.nuevoPico setFechaAlta:[NSDate date]];
+    
+    [self.delegate salvarPicoDidAdd];
 }
 
 - (IBAction)cancelarPico:(id)sender {
-    [self.delegate salvarPicoDiDCancel:self];
+    [self.delegate salvarPicoDiDCancel:[self nuevoPico]];
 }
 @end

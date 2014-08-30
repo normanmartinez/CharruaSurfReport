@@ -12,8 +12,8 @@
 @class NMSalvarPicoViewController;
 @protocol NMSalvarPicoViewControllerDelegate <NSObject>
 
--(void)salvarPicoDiDCancel:(NMSalvarPicoViewController *)controller;
--(void)salvarPicoDidAdd:(NMSalvarPicoViewController *)controller didSalvarPico:(Pico *)pico;
+-(void)salvarPicoDiDCancel:(Pico *)borrarPico;
+-(void)salvarPicoDidAdd;
 
 @end
 
@@ -22,6 +22,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtNombrePico;
 @property (strong, nonatomic) IBOutlet UILabel *lblLatitud;
 @property (strong, nonatomic) IBOutlet UILabel *lblLongitud;
+
+@property (nonatomic, strong) Pico *nuevoPico;
 
 @property (retain,nonatomic) NSDecimalNumber *latitud;
 @property (retain,nonatomic) NSDecimalNumber *longitud;

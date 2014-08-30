@@ -15,10 +15,8 @@
 @implementation NMLocalizarPicoViewController
 
 @synthesize currentLocation,locationManager;
+@synthesize fetchedResultsController = _fetchedResultsController;
 
-NSDecimalNumber *latitudActual;
-NSDecimalNumber *longitudActual;
-Pico *pico;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +32,8 @@ Pico *pico;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self getCurrentPosition];
+    id delegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = [delegate managedObjectContext];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,8 +80,12 @@ Pico *pico;
 - (IBAction)agregarPico:(id)sender
 {
     CLLocationCoordinate2D centre = [self.map centerCoordinate];
-    latitudActual=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.latitude];
-    longitudActual= (NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.longitude];
+    //latitudActual=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.latitude];
+    //longitudActual= (NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.longitude];
+    
+    self.nuevoPico=(Pico *)[NSEntityDescription insertNewObjectForEntityForName:@"Pico" inManagedObjectContext:[self managedObjectContext]];
+    self.nuevoPico.latitud=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.latitude];
+    self.nuevoPico.longitud=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.longitude];
 }
 
 #pragma mark - Segue
@@ -91,16 +95,28 @@ Pico *pico;
     //importante para ligar el delegado
     if ([[segue identifier] isEqualToString:@"salvarPico"])
     {
-        NMSalvarPicoViewController *salvarPico=[[navigationController viewControllers] objectAtIndex:0];
-        salvarPico.delegate=self;
-        salvarPico.latitud=latitudActual;
-        salvarPico.longitud=longitudActual;
+        NMSalvarPicoViewController *salvarPico=[[navigationController viewControllers] objectAtIndex:0];        salvarPico.delegate=self;
+        salvarPico.nuevoPico=self.nuevoPico;
     }
 }
 
--(void)salvarPicoDiDCancel:(NMSalvarPicoViewController *)controller
+-(void)salvarPicoDiDCancel:(Pico *)borrarPico
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSManagedObjectContext *context = self.managedObjectContext;
+    [context deleteObject:borrarPico];
+    [self dismissModalViewControllerAnimated:YES];
 }
+
+-(void)salvarPicoDidAdd
+{
+    NSError *error = nil;
+    NSManagedObjectContext *context = self.managedObjectContext;
+    if (![context save:&error]) {
+        NSLog(@"Error! %@", error);
+    }
+    [self dismissModalViewControllerAnimated:YES];
+    
+}
+
 
 @end

@@ -14,11 +14,16 @@
 #import "NMSalvarPicoViewController.h"
 
 
-@interface NMLocalizarPicoViewController : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate,NMSalvarPicoViewControllerDelegate>
+@interface NMLocalizarPicoViewController : UIViewController<NSFetchedResultsControllerDelegate,CLLocationManagerDelegate,MKMapViewDelegate,NMSalvarPicoViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property (nonatomic, retain) CLLocation* currentLocation;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+
+@property (nonatomic, strong) Pico *nuevoPico;
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 - (IBAction)agregarPico:(id)sender;
 
