@@ -104,7 +104,7 @@
 {
     NSManagedObjectContext *context = self.managedObjectContext;
     [context deleteObject:borrarPico];
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)salvarPicoDidAdd
@@ -114,8 +114,11 @@
     if (![context save:&error]) {
         NSLog(@"Error! %@", error);
     }
-    [self dismissModalViewControllerAnimated:YES];
-    
+    NSString *contenido=[[NSString alloc]initWithFormat:@"Se ha agregado el Pico %@",self.nuevoPico.nombrePico];
+    UIAlertView *alerta =[[UIAlertView alloc]initWithTitle:@"Nuevo Pico: " message:contenido delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil,nil];
+    [alerta show];
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

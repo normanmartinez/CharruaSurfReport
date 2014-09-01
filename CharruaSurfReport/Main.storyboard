@@ -13,13 +13,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TjS-SL-6Ab">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TjS-SL-6Ab">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TjS-SL-6Ab" id="yck-Ah-hhz">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="pMJ-mP-dWf" kind="push" id="lqk-db-Dh1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -38,6 +41,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Krh-TO-Mtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1449" y="-609"/>
+        </scene>
+        <!--Condicion Pico View Controller - Condición Pico-->
+        <scene sceneID="qRS-My-t7y">
+            <objects>
+                <viewController id="pMJ-mP-dWf" customClass="NMCondicionPicoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vgY-Li-shi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tif-XK-QVw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XrW-6B-i5u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Condición Pico" id="zGv-f2-suM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lwj-TD-hCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1979" y="-611"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="TTd-gb-Nsh">
+            <objects>
+                <pageViewController storyboardIdentifier="CondicionPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="cqC-xF-q9f" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ldB-16-RY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2439" y="-611"/>
+        </scene>
+        <!--Condicion Page Content View Controller-->
+        <scene sceneID="SP5-1k-PGt">
+            <objects>
+                <viewController storyboardIdentifier="CondicionPageContentViewController" id="Rwd-yE-ZZU" customClass="NMCondicionPageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0gK-ks-6wy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qdm-DM-WaV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jhg-wb-DEs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCS-ZK-2b6">
+                                <rect key="frame" x="20" y="72" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="uCS-ZK-2b6" id="3ue-5N-qrN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GFQ-an-9uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885" y="-611"/>
         </scene>
         <!--Localizar Pico View Controller - Localizar-->
         <scene sceneID="HL1-RZ-Cep">
@@ -82,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMy-7n-HfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="-609"/>
+            <point key="canvasLocation" x="1981" y="-1284"/>
         </scene>
         <!--Salvar Pico View Controller - Salvar-->
         <scene sceneID="lxo-Pd-bj0">
@@ -156,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJ3-Uu-t1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2857" y="-609"/>
+            <point key="canvasLocation" x="2885" y="-1278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h7d-3g-3Ls">
@@ -290,7 +350,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8v3-W7-K3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2331" y="-609"/>
+            <point key="canvasLocation" x="2439" y="-1284"/>
         </scene>
     </scenes>
     <resources>

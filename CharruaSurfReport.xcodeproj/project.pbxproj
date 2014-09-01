@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9406D78519B0D03000CD93DC /* diana.png in Resources */ = {isa = PBXBuildFile; fileRef = 9406D78419B0D03000CD93DC /* diana.png */; };
 		9406D78819B0F41900CD93DC /* NMSalvarPicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9406D78719B0F41900CD93DC /* NMSalvarPicoViewController.m */; };
+		944711C819B503BF00836B7D /* NMCondicionPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944711C719B503BF00836B7D /* NMCondicionPageContentViewController.m */; };
+		944711CB19B503F600836B7D /* NMCondicionPicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944711CA19B503F600836B7D /* NMCondicionPicoViewController.m */; };
 		94507D0019AF6F2400BB0944 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94507CFF19AF6F2400BB0944 /* MapKit.framework */; };
 		945842F619AF87230034E2B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945842F519AF87230034E2B5 /* CoreLocation.framework */; };
 		9458433E19AF97620034E2B5 /* NMLocalizarPicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9458433D19AF97620034E2B5 /* NMLocalizarPicoViewController.m */; };
@@ -49,6 +51,10 @@
 		9406D78419B0D03000CD93DC /* diana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = diana.png; path = ../../diana.png; sourceTree = "<group>"; };
 		9406D78619B0F41900CD93DC /* NMSalvarPicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMSalvarPicoViewController.h; sourceTree = "<group>"; };
 		9406D78719B0F41900CD93DC /* NMSalvarPicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSalvarPicoViewController.m; sourceTree = "<group>"; };
+		944711C619B503BF00836B7D /* NMCondicionPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMCondicionPageContentViewController.h; sourceTree = "<group>"; };
+		944711C719B503BF00836B7D /* NMCondicionPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMCondicionPageContentViewController.m; sourceTree = "<group>"; };
+		944711C919B503F600836B7D /* NMCondicionPicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMCondicionPicoViewController.h; sourceTree = "<group>"; };
+		944711CA19B503F600836B7D /* NMCondicionPicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMCondicionPicoViewController.m; sourceTree = "<group>"; };
 		94507CFF19AF6F2400BB0944 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		945842F519AF87230034E2B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9458433C19AF97620034E2B5 /* NMLocalizarPicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMLocalizarPicoViewController.h; sourceTree = "<group>"; };
@@ -129,6 +135,10 @@
 				9458433D19AF97620034E2B5 /* NMLocalizarPicoViewController.m */,
 				9406D78619B0F41900CD93DC /* NMSalvarPicoViewController.h */,
 				9406D78719B0F41900CD93DC /* NMSalvarPicoViewController.m */,
+				944711C919B503F600836B7D /* NMCondicionPicoViewController.h */,
+				944711CA19B503F600836B7D /* NMCondicionPicoViewController.m */,
+				944711C619B503BF00836B7D /* NMCondicionPageContentViewController.h */,
+				944711C719B503BF00836B7D /* NMCondicionPageContentViewController.m */,
 				94BC25EE19AE93CE00704352 /* Pico.h */,
 				94BC25EF19AE93CE00704352 /* Pico.m */,
 			);
@@ -140,13 +150,6 @@
 			children = (
 			);
 			name = Ubicar;
-			sourceTree = "<group>";
-		};
-		948AF5DC19AD6665003DAF76 /* Condicion */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Condicion;
 			sourceTree = "<group>";
 		};
 		948AF5DD19AD666C003DAF76 /* Notificacion */ = {
@@ -196,7 +199,6 @@
 				949EDA6E19AD507000F4955B /* NMAppDelegate.m */,
 				948AF5DA19AD6655003DAF76 /* Picos */,
 				948AF5DB19AD665C003DAF76 /* Ubicar */,
-				948AF5DC19AD6665003DAF76 /* Condicion */,
 				948AF5DD19AD666C003DAF76 /* Notificacion */,
 				949EDA7319AD507000F4955B /* Images.xcassets */,
 				949EDA7019AD507000F4955B /* CharruaSurfReport.xcdatamodeld */,
@@ -341,6 +343,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				94BC25F019AE93CE00704352 /* Pico.m in Sources */,
+				944711CB19B503F600836B7D /* NMCondicionPicoViewController.m in Sources */,
+				944711C819B503BF00836B7D /* NMCondicionPageContentViewController.m in Sources */,
 				949EDA6B19AD507000F4955B /* main.m in Sources */,
 				949EDA6F19AD507000F4955B /* NMAppDelegate.m in Sources */,
 				949EDA7219AD507000F4955B /* CharruaSurfReport.xcdatamodeld in Sources */,

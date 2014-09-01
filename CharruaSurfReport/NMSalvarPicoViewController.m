@@ -51,10 +51,19 @@
 
 - (IBAction)salvarPico:(id)sender
 {
-    [self.nuevoPico setNombrePico:self.txtNombrePico.text];
-    [self.nuevoPico setFechaAlta:[NSDate date]];
-    
-    [self.delegate salvarPicoDidAdd];
+    if([self.txtNombrePico.text length]==0)
+    {
+        NSString *contenido=[[NSString alloc]initWithFormat:@"Debe agregar el nombre del Pico!"];
+        UIAlertView *alerta =[[UIAlertView alloc]initWithTitle:@"Nuevo Pico: " message:contenido delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil,nil];
+        [alerta show];
+        [self.txtNombrePico resignFirstResponder];
+    }
+    else
+    {
+        [self.nuevoPico setNombrePico:self.txtNombrePico.text];
+        [self.nuevoPico setFechaAlta:[NSDate date]];
+        [self.delegate salvarPicoDidAdd];
+    }
 }
 
 - (IBAction)cancelarPico:(id)sender {
