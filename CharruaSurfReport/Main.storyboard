@@ -62,42 +62,42 @@
             <point key="canvasLocation" x="1979" y="-611"/>
         </scene>
         <!--Page View Controller-->
-        <scene sceneID="TTd-gb-Nsh">
+        <scene sceneID="Zgp-Dx-ifV">
             <objects>
-                <pageViewController storyboardIdentifier="CondicionPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="cqC-xF-q9f" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ldB-16-RY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController storyboardIdentifier="CondicionPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9Nn-yG-QVU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v2b-sk-m9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="-611"/>
+            <point key="canvasLocation" x="2423" y="-613"/>
         </scene>
         <!--Condicion Page Content View Controller-->
-        <scene sceneID="SP5-1k-PGt">
+        <scene sceneID="ymB-Rc-cdq">
             <objects>
-                <viewController storyboardIdentifier="CondicionPageContentViewController" id="Rwd-yE-ZZU" customClass="NMCondicionPageContentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CondicionPageContentViewController" id="GIN-Rn-3qZ" customClass="NMCondicionPageContentViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0gK-ks-6wy"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qdm-DM-WaV"/>
+                        <viewControllerLayoutGuide type="top" id="SgN-8b-gcT"/>
+                        <viewControllerLayoutGuide type="bottom" id="pTM-Ma-7BT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Jhg-wb-DEs">
+                    <view key="view" contentMode="scaleToFill" id="eOP-AJ-xVy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCS-ZK-2b6">
-                                <rect key="frame" x="20" y="72" width="280" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmY-xw-YIS">
+                                <rect key="frame" x="139" y="79" width="74" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="titleLabel" destination="uCS-ZK-2b6" id="3ue-5N-qrN"/>
+                        <outlet property="titleLabel" destination="KmY-xw-YIS" id="sTX-wf-9TD"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GFQ-an-9uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N2p-vk-Fea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2885" y="-611"/>
+            <point key="canvasLocation" x="2839" y="-604"/>
         </scene>
         <!--Localizar Pico View Controller - Localizar-->
         <scene sceneID="HL1-RZ-Cep">
@@ -222,7 +222,7 @@
         <scene sceneID="h7d-3g-3Ls">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="Khv-f0-Znp" colorLabel="IBBuiltInLabel-Green" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="hRD-5h-yRe">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>

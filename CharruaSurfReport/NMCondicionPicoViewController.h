@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "NMCondicionPageContentViewController.h"
+#import "Pico.h"
 
 @interface NMCondicionPicoViewController : UIViewController <UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
-@property (strong, nonatomic) NSDictionary *listaCondiciones;
+
+@property (strong, nonatomic) Pico *pico;
 @property (strong, nonatomic) NSArray *pageTitles;
 
 @end
