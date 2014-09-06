@@ -14,20 +14,15 @@
 
 @implementation NMCondicionPicoViewController
 @synthesize listaPicos,latitud,longitud,nombrePico,fechaCondicion;
-
+@synthesize delegate;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIAlertView *messageAlert = [[UIAlertView alloc]
-                                 initWithTitle:@"Row Selected" message:self.nombrePico delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
-    // Display Alert Message
-    [messageAlert show];
-    
-    self.latitud=[NSDecimalNumber decimalNumberWithString:@"-34.799182"];
-    self.longitud=[NSDecimalNumber decimalNumberWithString:@"-55.532799"];
-    self.nombrePico=@"Pantalla";
+    //self.latitud=[NSDecimalNumber :self.latitud];
+    //self.longitud=[NSDecimalNumber decimalNumberWithString:self.longitud];
+    self.nombrePico=self.nombrePico;
     
     self.listaPicos=[self listadoCondicionesLatitud:self.latitud listadoCondicionesLongitud:self.longitud];
     

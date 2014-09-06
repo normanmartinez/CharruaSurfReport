@@ -59,28 +59,13 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.picoSeleccionado = [self.fetchedResultsController objectAtIndexPath:indexPath];
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
 // Método para editar y eliminar un Pico
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSManagedObjectContext *context = [self managedObjectContext];
-        Pico *pico = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [context deleteObject:pico];
+        self.pico = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [context deleteObject:self.pico];
         
         NSError *error = nil;
         if (![context save:&error]) {
@@ -88,23 +73,6 @@
         }
     }
 }
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 
 #pragma mark - Navigation
 
@@ -115,10 +83,13 @@
     //importante para ligar el delegado
     if ([[segue identifier] isEqualToString:@"cellCondicion"])
     {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Pico *picoSeleccionado =[self.fetchedResultsController objectAtIndexPath:indexPath];
 		NMCondicionPicoViewController *condicion =[segue destinationViewController];
-		condicion.nombrePico=self.picoSeleccionado.nombrePico;
-        condicion.latitud=self.picoSeleccionado.latitud;
-        condicion.longitud=self.picoSeleccionado.longitud;
+        condicion.delegate=self;
+		condicion.nombrePico=picoSeleccionado.nombrePico;
+        condicion.latitud=picoSeleccionado.latitud;
+        condicion.longitud=picoSeleccionado.longitud;
     }
 }
 

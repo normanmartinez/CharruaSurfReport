@@ -10,7 +10,15 @@
 #import "NMCondicionPageContentViewController.h"
 #import "Pico.h"
 
+@class NMCondicionPicoViewController;
+
+@protocol NMCondicionPicoViewControllerDelegate <NSObject>
+
+@end
+
 @interface NMCondicionPicoViewController : UIViewController <UIPageViewControllerDataSource>
+
+@property (nonatomic,weak) id<NMCondicionPicoViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *listaPicos;
