@@ -13,8 +13,10 @@
 @interface NMCondicionPicoViewController : UIViewController <UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) NSArray *listaPicos;
 
-@property (strong, nonatomic) Pico *pico;
-@property (strong, nonatomic) NSArray *pageTitles;
+@property (retain,nonatomic) NSDecimalNumber *latitud;
+@property (retain,nonatomic) NSDecimalNumber *longitud;
+@property (retain,nonatomic) NSString *nombrePico;
 
 @end

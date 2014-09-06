@@ -13,16 +13,19 @@
 @end
 
 @implementation NMCondicionPicoViewController
-@synthesize pageTitles;
+@synthesize listaPicos,latitud,longitud,nombrePico;
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    // Ejemplo .... quitar
-    self.pageTitles = @[@"Hoja 1", @"Hoja 2", @"Hoja 3", @"Hoja 4"];
+    self.latitud=[NSDecimalNumber decimalNumberWithString:@"-34.799182"];
+    self.longitud=[NSDecimalNumber decimalNumberWithString:@"-55.532799"];
+    self.nombrePico=@"Pantalla";
+    
+    self.listaPicos=[self listadoCondicionesLatitud:self.latitud listadoCondicionesLongitud:self.longitud];
+    
     [self setearPageViewController];
 }
 
@@ -51,28 +54,10 @@
 
 }
 
-//Asigna las propiedades del CondicionPageContentViewController
-- (NMCondicionPageContentViewController *)viewControllerAtIndex:(NSUInteger)index
+//Recupera el array de condiciones de un pico
+-(NSArray *)listadoCondicionesLatitud:(NSDecimalNumber *)lat listadoCondicionesLongitud:(NSDecimalNumber *)lon
 {
-    if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
-        return nil;
-    }
-    
-    // Create a new view controller and pass suitable data.
-    NMCondicionPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CondicionPageContentViewController"];
-    
-    //aca tengo que pasar el dato del pico (lo que viene de la otra pantalla + el JSON
-  
-    pageContentViewController.titleText = self.pageTitles[index];
-    
-    pageContentViewController.pageIndex = index;
-    
-    return pageContentViewController;
-}
-
--(void)recuperaCondiciones:(Pico *) picoActual
-{
-    NSString *urlAPI =[[NSString alloc]initWithFormat:@"http://api.worldweatheronline.com/free/v1/marine.ashx?key=cf48441cc45eea89cbd259a8c698c4a569fdcb2c&q=%@,%@&format=json",(NSString *)picoActual.latitud,(NSString *)picoActual.longitud];
+    NSString *urlAPI =[[NSString alloc]initWithFormat:@"http://api.worldweatheronline.com/free/v1/marine.ashx?key=cf48441cc45eea89cbd259a8c698c4a569fdcb2c&q=%@,%@&format=json",(NSString *)lat,(NSString *)lon];
     
     NSURL *url=[NSURL URLWithString:urlAPI];
     NSError *error=nil;
@@ -86,15 +71,30 @@
     NSArray *nivel2 = [nivel1 objectForKey:@"weather"];
     NSDictionary *nivel3 =[nivel2 objectAtIndex:0];
     NSArray *nivel4 =[nivel3 objectForKey:@"hourly"];
-    
-    for (int aux=0; aux <[nivel4 count]; aux++)
-    {
-        NSDictionary *nivel5 =[nivel4 objectAtIndex:aux];
-        NSLog(@"%@",[nivel5 valueForKey:@"humidity"]);
-    }
+    return nivel4;
 }
 
+
 #pragma mark - Page View Controller Data Source
+
+//Paso un Pico al PageView
+- (NMCondicionPageContentViewController *)viewControllerAtIndex:(NSUInteger)index
+{
+    if (([self.listaPicos count] == 0) || (index >= [self.listaPicos count])) {
+        return nil;
+    }
+    
+    // Create a new view controller and pass suitable data.
+    NMCondicionPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CondicionPageContentViewController"];
+    
+    pageContentViewController.pico=[self.listaPicos objectAtIndex:index];
+    pageContentViewController.nombrePico=self.nombrePico;
+    pageContentViewController.latitud=self.latitud;
+    pageContentViewController.longitud=self.longitud;
+    pageContentViewController.pageIndex = index;
+    
+    return pageContentViewController;
+}
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
@@ -117,7 +117,7 @@
     }
     
     index++;
-    if (index == [self.pageTitles count]) {
+    if (index == [self.listaPicos count]) {
         return nil;
     }
     return [self viewControllerAtIndex:index];
@@ -125,7 +125,7 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
-    return [self.pageTitles count];
+    return [self.listaPicos count];
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController

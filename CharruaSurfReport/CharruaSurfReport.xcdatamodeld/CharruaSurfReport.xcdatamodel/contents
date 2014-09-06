@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Pico" representedClassName="Pico" syncable="YES">
+        <attribute name="direccionSwell" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="direccionViento" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="fechaAlta" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="hora" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="latitud" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitud" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nombrePico" attributeType="String" syncable="YES"/>
+        <attribute name="periodoSwell" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tamanoSwell" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="temperatura" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="temperaturaAgua" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Pico" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Pico" positionX="-63" positionY="-18" width="128" height="210"/>
     </elements>
 </model>
