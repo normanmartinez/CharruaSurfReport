@@ -14,7 +14,7 @@
 
 @implementation NMCondicionPageContentViewController
 
-@synthesize pico;
+@synthesize pico,fechaCondicion,latitud,longitud;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,12 +29,8 @@
 {
     [super viewDidLoad];
     self.lblNombrePico.text=self.nombrePico;
-    
-    if([[pico valueForKey:@"time"]isEqualToString:@"0"])
-        self.lblHora.text=[NSString stringWithFormat:@"00.00"];
-    else
-        self.lblHora.text=(NSString *)[pico valueForKey:@"time"];
-    
+    self.lblFechaCondicion.text=self.fechaCondicion;
+    self.lblHora.text=(NSString *)[pico valueForKey:@"time"];
     self.lblLatidud.text=[self.latitud stringValue];
     self.lblLongitud.text=[self.longitud stringValue];
     self.lblTemperatura.text=(NSString *)[pico valueForKey:@"tempC"];
@@ -49,6 +45,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSString *)direccionSwell:(NSNumber *)direccion
+{
+    return  nil;
+}
+
+-(NSString *)direccionViento:(NSNumber *)direccion
+{
+    return  nil;
 }
 
 @end

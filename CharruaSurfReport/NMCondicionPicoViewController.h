@@ -18,5 +18,6 @@
 @property (retain,nonatomic) NSDecimalNumber *latitud;
 @property (retain,nonatomic) NSDecimalNumber *longitud;
 @property (retain,nonatomic) NSString *nombrePico;
+@property (retain,nonatomic) NSString *fechaCondicion;
 
 @end

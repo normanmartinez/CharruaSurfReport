@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Pico.h"
+#import "NMCondicionPicoViewController.h"
 
-@interface NMPicosListaTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface NMPicosListaTableViewController : UITableViewController <NSFetchedResultsControllerDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
+@property (nonatomic, strong) Pico *pico;
+@property (nonatomic, strong) Pico *picoSeleccionado;
 
 @end

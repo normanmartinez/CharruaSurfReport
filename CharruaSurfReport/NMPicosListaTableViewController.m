@@ -52,12 +52,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    Pico *pico = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = pico.nombrePico;
+    //Pico *pico = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    self.pico = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = self.pico.nombrePico;
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.picoSeleccionado = [self.fetchedResultsController objectAtIndexPath:indexPath];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -100,16 +105,23 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    //UINavigationController *navigationController = segue.destinationViewController;
+    //importante para ligar el delegado
+    if ([[segue identifier] isEqualToString:@"cellCondicion"])
+    {
+		NMCondicionPicoViewController *condicion =[segue destinationViewController];
+		condicion.nombrePico=self.picoSeleccionado.nombrePico;
+        condicion.latitud=self.picoSeleccionado.latitud;
+        condicion.longitud=self.picoSeleccionado.longitud;
+    }
 }
-*/
+
 
 #pragma mark -
 #pragma mark Fetched Results Controller section

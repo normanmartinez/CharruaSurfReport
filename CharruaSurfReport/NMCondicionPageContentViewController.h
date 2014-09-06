@@ -17,6 +17,7 @@
 @property (nonatomic,retain) NSString *nombrePico;
 @property (nonatomic,retain) NSDecimalNumber *latitud;
 @property (nonatomic,retain) NSDecimalNumber *longitud;
+@property (nonatomic,retain) NSString *fechaCondicion;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblNombrePico;
 @property (strong, nonatomic) IBOutlet UILabel *lblHora;
@@ -28,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblTamanoSwell;
 @property (strong, nonatomic) IBOutlet UILabel *lblPeriodoSwell;
 @property (strong, nonatomic) IBOutlet UILabel *lblDireccionViento;
+@property (strong, nonatomic) IBOutlet UILabel *lblFechaCondicion;
 
 @property (strong, nonatomic) NSDictionary *pico;
 @end

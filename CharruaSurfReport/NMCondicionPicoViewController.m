@@ -13,12 +13,17 @@
 @end
 
 @implementation NMCondicionPicoViewController
-@synthesize listaPicos,latitud,longitud,nombrePico;
+@synthesize listaPicos,latitud,longitud,nombrePico,fechaCondicion;
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Row Selected" message:self.nombrePico delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    // Display Alert Message
+    [messageAlert show];
     
     self.latitud=[NSDecimalNumber decimalNumberWithString:@"-34.799182"];
     self.longitud=[NSDecimalNumber decimalNumberWithString:@"-55.532799"];
@@ -70,8 +75,10 @@
     NSDictionary *nivel1 = [nivelBase objectForKey:@"data"];
     NSArray *nivel2 = [nivel1 objectForKey:@"weather"];
     NSDictionary *nivel3 =[nivel2 objectAtIndex:0];
-    NSArray *nivel4 =[nivel3 objectForKey:@"hourly"];
-    return nivel4;
+    self.fechaCondicion=[nivel3 objectForKey:@"date"];
+    NSMutableArray *nivel4 =[nivel3 objectForKey:@"hourly"];
+    [nivel4 removeObjectAtIndex:0];
+    return (NSArray *)nivel4;
 }
 
 
@@ -92,6 +99,7 @@
     pageContentViewController.latitud=self.latitud;
     pageContentViewController.longitud=self.longitud;
     pageContentViewController.pageIndex = index;
+    pageContentViewController.fechaCondicion=self.fechaCondicion;
     
     return pageContentViewController;
 }
