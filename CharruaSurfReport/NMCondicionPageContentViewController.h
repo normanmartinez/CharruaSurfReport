@@ -30,6 +30,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblPeriodoSwell;
 @property (strong, nonatomic) IBOutlet UILabel *lblDireccionViento;
 @property (strong, nonatomic) IBOutlet UILabel *lblFechaCondicion;
+@property (strong, nonatomic) IBOutlet UILabel *lblVelocidadViento;
 
 @property (strong, nonatomic) NSDictionary *pico;
 @end

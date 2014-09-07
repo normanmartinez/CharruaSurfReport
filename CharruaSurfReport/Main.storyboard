@@ -178,6 +178,12 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Velocidad Viento:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpN-IB-bmX">
+                                <rect key="frame" x="22" y="401" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bO9-tU-qMr">
                                 <rect key="frame" x="162" y="256" width="138" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -208,8 +214,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7S-2d-hVR">
+                                <rect key="frame" x="162" y="401" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.027450982481241226" green="0.83529418706893921" blue="0.95686280727386475" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.96862751245498657" green="0.69411766529083252" blue="0.050980396568775177" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
                         <outlet property="lblDireccionSwell" destination="hEX-oJ-zaA" id="Loh-T3-q65"/>
@@ -223,6 +235,7 @@
                         <outlet property="lblTamanoSwell" destination="eLs-Lf-fY6" id="lcW-mE-X61"/>
                         <outlet property="lblTemperatura" destination="8bt-MP-0W1" id="KPB-X0-odl"/>
                         <outlet property="lblTemperaturaAgua" destination="bO9-tU-qMr" id="3vH-Fj-DIJ"/>
+                        <outlet property="lblVelocidadViento" destination="M7S-2d-hVR" id="Fnq-UH-8V3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2p-vk-Fea" userLabel="First Responder" sceneMemberID="firstResponder"/>

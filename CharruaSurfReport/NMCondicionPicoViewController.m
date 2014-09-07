@@ -20,12 +20,13 @@
 {
     [super viewDidLoad];
     
-    //self.latitud=[NSDecimalNumber :self.latitud];
-    //self.longitud=[NSDecimalNumber decimalNumberWithString:self.longitud];
+    //asigno nombre del pico
     self.nombrePico=self.nombrePico;
     
+    //recupero información de condicion para la geolocalización
     self.listaPicos=[self listadoCondicionesLatitud:self.latitud listadoCondicionesLongitud:self.longitud];
     
+    //seteo el pageview
     [self setearPageViewController];
 }
 
