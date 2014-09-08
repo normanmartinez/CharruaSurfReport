@@ -37,5 +37,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>WorldWeatherKey</key>
+	<string>636bbac6096d033e1bcf1df426190b1f31331e21</string>
 </dict>
 </plist>

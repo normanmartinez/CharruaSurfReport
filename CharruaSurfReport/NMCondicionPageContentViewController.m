@@ -31,8 +31,8 @@
     self.lblNombrePico.text=self.nombrePico;
     self.lblFechaCondicion.text=self.fechaCondicion;
     self.lblHora.text=(NSString *)[pico valueForKey:@"time"];
-    self.lblLatidud.text=[self.latitud stringValue];
-    self.lblLongitud.text=[self.longitud stringValue];
+    self.lblLatidud.text=[self formateaLocalizacion:self.latitud];
+    self.lblLongitud.text=[self formateaLocalizacion:self.longitud];
     NSString *tem=[[NSString alloc]initWithFormat:@"%@ C",(NSString *)[pico valueForKey:@"tempC"]];
     self.lblTemperatura.text=tem;
     NSString *temA=[[NSString alloc]initWithFormat:@"%@ C",(NSString *)[pico valueForKey:@"waterTemp_C"]];
@@ -234,6 +234,16 @@
         direccion=@"N";
     }
     return  direccion;
+}
+
+-(NSString *)formateaLocalizacion:(NSDecimalNumber *)valor
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setRoundingMode: NSNumberFormatterRoundHalfUp];
+    [formatter setMaximumFractionDigits:6];
+    
+    return[formatter stringFromNumber:valor];
 }
 
 @end

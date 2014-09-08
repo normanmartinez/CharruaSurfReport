@@ -28,8 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.lblLatitud.text=[self.nuevoPico.latitud stringValue];
-    self.lblLongitud.text=[self.nuevoPico.longitud stringValue];
+    self.lblLatitud.text=[self formateaLocalizacion:self.nuevoPico.latitud];//[self.nuevoPico.latitud stringValue];
+    self.lblLongitud.text=[self formateaLocalizacion:self.nuevoPico.longitud];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,7 +66,19 @@
     }
 }
 
-- (IBAction)cancelarPico:(id)sender {
+- (IBAction)cancelarPico:(id)sender
+{
     [self.delegate salvarPicoDiDCancel:[self nuevoPico]];
 }
+
+-(NSString *)formateaLocalizacion:(NSDecimalNumber *)valor
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setRoundingMode: NSNumberFormatterRoundHalfUp];
+    [formatter setMaximumFractionDigits:6];
+    
+    return[formatter stringFromNumber:valor];
+}
+
 @end

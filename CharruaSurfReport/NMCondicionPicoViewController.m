@@ -52,14 +52,26 @@
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
+    
+    for (UIView *subview in self.pageViewController.view.subviews) {
+        if ([subview isKindOfClass:[UIPageControl class]]) {
+            UIPageControl *pageControl = (UIPageControl *)subview;
+            pageControl.pageIndicatorTintColor = [UIColor grayColor];
+            pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
+            pageControl.backgroundColor = [UIColor whiteColor];
+        }
+    }
 
 }
 
 //Recupera el array de condiciones de un pico
 -(NSArray *)listadoCondicionesLatitud:(NSDecimalNumber *)lat listadoCondicionesLongitud:(NSDecimalNumber *)lon
 {
-    NSString *urlAPI =[[NSString alloc]initWithFormat:@"http://api.worldweatheronline.com/free/v1/marine.ashx?key=cf48441cc45eea89cbd259a8c698c4a569fdcb2c&q=%@,%@&format=json",(NSString *)lat,(NSString *)lon];
+    /*NSString *urlAPI =[[NSString alloc]initWithFormat:@"http://api.worldweatheronline.com/free/v1/marine.ashx?key=cf48441cc45eea89cbd259a8c698c4a569fdcb2c&q=%@,%@&format=json",(NSString *)lat,(NSString *)lon];*/
     
+    NSString *urlAPI =[[NSString alloc]initWithFormat:@"http://api.worldweatheronline.com/premium/v1/marine.ashx?q=%@,%@&format=json&key=%@",(NSString *)lat,(NSString *)lon,[self recuperaValorPlist:@"WorldWeatherKey"]];
+    
+    //636bbac6096d033e1bcf1df426190b1f31331e21
     NSURL *url=[NSURL URLWithString:urlAPI];
     NSError *error=nil;
     NSData *data=[NSData dataWithContentsOfURL:url];
@@ -135,6 +147,14 @@
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
 {
     return 0;
+}
+
+-(NSString *)recuperaValorPlist:(NSString *)key
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"WorldWeather" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: path];
+    
+    return [dict objectForKey:key];
 }
 
 
