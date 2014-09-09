@@ -21,7 +21,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="pMJ-mP-dWf" kind="push" identifier="cellCondicion" id="lqk-db-Dh1"/>
+                                    <segue destination="deL-ua-4Ma" kind="push" identifier="cellFechas" id="qZ7-wF-jad"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,7 +59,127 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lwj-TD-hCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1979" y="-611"/>
+            <point key="canvasLocation" x="2432" y="-595"/>
+        </scene>
+        <!--Lista Fechas Pico View Controller-->
+        <scene sceneID="Kf8-jz-0Sh">
+            <objects>
+                <viewController id="deL-ua-4Ma" customClass="NMListaFechasPicoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sQ9-DF-Kla"/>
+                        <viewControllerLayoutGuide type="bottom" id="nnP-Ai-ab0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XG6-Q1-cJ2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0C-4H-9ek">
+                                <rect key="frame" x="54" y="73" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btaFecha1:" destination="deL-ua-4Ma" eventType="touchUpInside" id="BBj-EC-1w1"/>
+                                    <segue destination="pMJ-mP-dWf" kind="push" identifier="cellFecha1" id="vWK-r5-p6W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHK-HG-TqY">
+                                <rect key="frame" x="167" y="73" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btaFecha2:" destination="deL-ua-4Ma" eventType="touchUpInside" id="tqA-0Y-cT0"/>
+                                    <segue destination="pMJ-mP-dWf" kind="push" identifier="cellFecha2" id="cXX-am-S5o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYv-jY-dyQ">
+                                <rect key="frame" x="54" y="179" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btaFecha3:" destination="deL-ua-4Ma" eventType="touchUpInside" id="tom-hc-0xs"/>
+                                    <segue destination="pMJ-mP-dWf" kind="push" identifier="cellFecha3" id="pMb-2p-6Cl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toZ-7y-O6Q">
+                                <rect key="frame" x="167" y="179" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.02745098248" green="0.83529418710000003" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btaFecha4:" destination="deL-ua-4Ma" eventType="touchUpInside" id="R4U-Eq-zxr"/>
+                                    <segue destination="pMJ-mP-dWf" kind="push" identifier="cellFecha4" id="0uB-XM-CfP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Z9-1D-8C8">
+                                <rect key="frame" x="54" y="287" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btaFecha5:" destination="deL-ua-4Ma" eventType="touchUpInside" id="797-RC-OwD"/>
+                                    <segue destination="pMJ-mP-dWf" kind="push" identifier="cellFecha5" id="zSt-rQ-y1b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4E-x6-z2y">
+                                <rect key="frame" x="167" y="287" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btaFecha6:" destination="deL-ua-4Ma" eventType="touchUpInside" id="3L5-JW-YCO"/>
+                                    <segue destination="pMJ-mP-dWf" kind="push" identifier="cellFecha6" id="5TU-TM-oeC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esc-8k-1U8">
+                                <rect key="frame" x="54" y="395" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btaFecha7:" destination="deL-ua-4Ma" eventType="touchUpInside" id="ow4-AO-Zkq"/>
+                                    <segue destination="pMJ-mP-dWf" kind="push" identifier="cellFecha7" id="PUP-mZ-mss"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5L2-SX-01X"/>
+                    <connections>
+                        <outlet property="btFecha1" destination="c0C-4H-9ek" id="Nrr-Gl-jbo"/>
+                        <outlet property="btFecha2" destination="mHK-HG-TqY" id="yf5-92-sBC"/>
+                        <outlet property="btFecha3" destination="bYv-jY-dyQ" id="wak-VH-6bD"/>
+                        <outlet property="btFecha4" destination="toZ-7y-O6Q" id="cda-iQ-l8S"/>
+                        <outlet property="btFecha5" destination="9Z9-1D-8C8" id="UzT-4q-Zrr"/>
+                        <outlet property="btFecha6" destination="w4E-x6-z2y" id="dU1-Js-Aa3"/>
+                        <outlet property="btFecha7" destination="Esc-8k-1U8" id="AaE-9E-NV5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5NO-4l-KKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1981" y="-598"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Zgp-Dx-ifV">
@@ -67,7 +187,7 @@
                 <pageViewController storyboardIdentifier="CondicionPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9Nn-yG-QVU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v2b-sk-m9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="-614"/>
+            <point key="canvasLocation" x="2892" y="-598"/>
         </scene>
         <!--Condicion Page Content View Controller-->
         <scene sceneID="ymB-Rc-cdq">
@@ -284,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2p-vk-Fea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2885" y="-609"/>
+            <point key="canvasLocation" x="3338" y="-593"/>
         </scene>
         <!--Localizar Pico View Controller - Localizar-->
         <scene sceneID="HL1-RZ-Cep">
@@ -439,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YiW-b7-nvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="154"/>
+            <point key="canvasLocation" x="1449" y="926"/>
         </scene>
         <!--Navigation Controller - Llegar al Pico-->
         <scene sceneID="5wg-MJ-aF5">
@@ -458,7 +578,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OH7-YZ-pwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986" y="154"/>
+            <point key="canvasLocation" x="973" y="926"/>
         </scene>
         <!--Navigation Controller - Picos-->
         <scene sceneID="Mva-QD-qZa">
@@ -496,7 +616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3Y-yE-iT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="893"/>
+            <point key="canvasLocation" x="1449" y="1665"/>
         </scene>
         <!--Navigation Controller - Notificación-->
         <scene sceneID="IO3-R9-gsv">
@@ -515,7 +635,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qx7-B9-bVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986" y="893"/>
+            <point key="canvasLocation" x="973" y="1665"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SzC-7q-tGv">
@@ -548,4 +668,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="PUP-mZ-mss"/>
+    </inferredMetricsTieBreakers>
 </document>

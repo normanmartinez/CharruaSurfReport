@@ -15,6 +15,7 @@
 		94507D0019AF6F2400BB0944 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94507CFF19AF6F2400BB0944 /* MapKit.framework */; };
 		945842F619AF87230034E2B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945842F519AF87230034E2B5 /* CoreLocation.framework */; };
 		9458433E19AF97620034E2B5 /* NMLocalizarPicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9458433D19AF97620034E2B5 /* NMLocalizarPicoViewController.m */; };
+		9465859C19BE5C460075E779 /* NMListaFechasPicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9465859B19BE5C460075E779 /* NMListaFechasPicoViewController.m */; };
 		9466873719B120800069FF18 /* beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 9466873619B120800069FF18 /* beach.png */; };
 		9466873919B120F90069FF18 /* cardir.png in Resources */ = {isa = PBXBuildFile; fileRef = 9466873819B120F90069FF18 /* cardir.png */; };
 		9466873B19B121610069FF18 /* icon_share_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9466873A19B121610069FF18 /* icon_share_phone.png */; };
@@ -62,6 +63,8 @@
 		945842F519AF87230034E2B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9458433C19AF97620034E2B5 /* NMLocalizarPicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMLocalizarPicoViewController.h; sourceTree = "<group>"; };
 		9458433D19AF97620034E2B5 /* NMLocalizarPicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMLocalizarPicoViewController.m; sourceTree = "<group>"; };
+		9465859A19BE5C460075E779 /* NMListaFechasPicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMListaFechasPicoViewController.h; sourceTree = "<group>"; };
+		9465859B19BE5C460075E779 /* NMListaFechasPicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMListaFechasPicoViewController.m; sourceTree = "<group>"; };
 		9466873619B120800069FF18 /* beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beach.png; sourceTree = "<group>"; };
 		9466873819B120F90069FF18 /* cardir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardir.png; sourceTree = "<group>"; };
 		9466873A19B121610069FF18 /* icon_share_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_share_phone.png; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				9458433D19AF97620034E2B5 /* NMLocalizarPicoViewController.m */,
 				9406D78619B0F41900CD93DC /* NMSalvarPicoViewController.h */,
 				9406D78719B0F41900CD93DC /* NMSalvarPicoViewController.m */,
+				9465859A19BE5C460075E779 /* NMListaFechasPicoViewController.h */,
+				9465859B19BE5C460075E779 /* NMListaFechasPicoViewController.m */,
 				944711C919B503F600836B7D /* NMCondicionPicoViewController.h */,
 				944711CA19B503F600836B7D /* NMCondicionPicoViewController.m */,
 				944711C619B503BF00836B7D /* NMCondicionPageContentViewController.h */,
@@ -354,6 +359,7 @@
 				9406D78819B0F41900CD93DC /* NMSalvarPicoViewController.m in Sources */,
 				9458433E19AF97620034E2B5 /* NMLocalizarPicoViewController.m in Sources */,
 				94DE699619AE7606008C2F41 /* NMPicosListaTableViewController.m in Sources */,
+				9465859C19BE5C460075E779 /* NMListaFechasPicoViewController.m in Sources */,
 				944BCA7919B7E5540088D061 /* Pico.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -75,12 +75,22 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"cellCondicion"])
+    /*if ([[segue identifier] isEqualToString:@"cellCondicion"])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Pico *picoSelnslogeccionado =[self.fetchedResultsController objectAtIndexPath:indexPath];
+		NMCondicionPicoViewController *condicion =[segue destinationViewController];
+        condicion.delegate=self;
+		condicion.nombrePico=picoSeleccionado.nombrePico;
+        condicion.latitud=picoSeleccionado.latitud;
+        condicion.longitud=picoSeleccionado.longitud;
+    }
+    else*/
+    if ([[segue identifier] isEqualToString:@"cellFechas"])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Pico *picoSeleccionado =[self.fetchedResultsController objectAtIndexPath:indexPath];
-		NMCondicionPicoViewController *condicion =[segue destinationViewController];
-        condicion.delegate=self;
+		NMListaFechasPicoViewController *condicion =[segue destinationViewController];
 		condicion.nombrePico=picoSeleccionado.nombrePico;
         condicion.latitud=picoSeleccionado.latitud;
         condicion.longitud=picoSeleccionado.longitud;

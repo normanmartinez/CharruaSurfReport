@@ -24,7 +24,7 @@
     self.nombrePico=self.nombrePico;
     
     //recupero información de condicion para la geolocalización
-    self.listaPicos=[self listadoCondicionesLatitud:self.latitud listadoCondicionesLongitud:self.longitud];
+    self.listaPicos=[self listadoCondicionesLatitud:self.latitud listadoCondicionesLongitud:self.longitud fechaDesplegar:self.fechaCondicion];
     
     //seteo el pageview
     [self setearPageViewController];
@@ -65,13 +65,12 @@
 }
 
 //Recupera el array de condiciones de un pico
--(NSArray *)listadoCondicionesLatitud:(NSDecimalNumber *)lat listadoCondicionesLongitud:(NSDecimalNumber *)lon
+-(NSArray *)listadoCondicionesLatitud:(NSDecimalNumber *)lat listadoCondicionesLongitud:(NSDecimalNumber *)lon fechaDesplegar:(NSString *)fecha
 {
     /*NSString *urlAPI =[[NSString alloc]initWithFormat:@"http://api.worldweatheronline.com/free/v1/marine.ashx?key=cf48441cc45eea89cbd259a8c698c4a569fdcb2c&q=%@,%@&format=json",(NSString *)lat,(NSString *)lon];*/
     
-    NSString *urlAPI =[[NSString alloc]initWithFormat:@"http://api.worldweatheronline.com/premium/v1/marine.ashx?q=%@,%@&format=json&key=%@",(NSString *)lat,(NSString *)lon,[self recuperaValorPlist:@"WorldWeatherKey"]];
+    NSString *urlAPI =[[NSString alloc]initWithFormat:@"http://api.worldweatheronline.com/premium/v1/marine.ashx?q=%@,%@&format=json&key=%@&date=%@",(NSString *)lat,(NSString *)lon,[self recuperaValorPlist:@"WorldWeatherKey"],fecha];
     
-    //636bbac6096d033e1bcf1df426190b1f31331e21
     NSURL *url=[NSURL URLWithString:urlAPI];
     NSError *error=nil;
     NSData *data=[NSData dataWithContentsOfURL:url];
@@ -86,6 +85,7 @@
     self.fechaCondicion=[nivel3 objectForKey:@"date"];
     NSMutableArray *nivel4 =[nivel3 objectForKey:@"hourly"];
     [nivel4 removeObjectAtIndex:0];
+
     return (NSArray *)nivel4;
 }
 
@@ -107,6 +107,7 @@
     pageContentViewController.latitud=self.latitud;
     pageContentViewController.longitud=self.longitud;
     pageContentViewController.pageIndex = index;
+
     pageContentViewController.fechaCondicion=self.fechaCondicion;
     
     return pageContentViewController;

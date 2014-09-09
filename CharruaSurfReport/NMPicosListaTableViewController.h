@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Pico.h"
 #import "NMCondicionPicoViewController.h"
+#import "NMListaFechasPicoViewController.h"
 
 @interface NMPicosListaTableViewController : UITableViewController <NSFetchedResultsControllerDelegate,UITableViewDataSource,UITableViewDelegate,NMCondicionPicoViewControllerDelegate>
 
