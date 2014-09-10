@@ -27,5 +27,6 @@
 @property (retain,nonatomic) NSDecimalNumber *longitud;
 @property (retain,nonatomic) NSString *nombrePico;
 @property (retain,nonatomic) NSString *fechaCondicion;
+@property (retain,nonatomic) UIColor *color;
 
 @end

@@ -17,6 +17,7 @@
 @property (retain,nonatomic) NSString *nombrePico;
 @property (retain,nonatomic) NSString *fechaCondicion;
 @property (strong, nonatomic) NSArray *listaFechas;
+@property (retain,nonatomic) UIColor *color;
 
 @property (strong, nonatomic) IBOutlet UIButton *btFecha1;
 @property (strong, nonatomic) IBOutlet UIButton *btFecha2;

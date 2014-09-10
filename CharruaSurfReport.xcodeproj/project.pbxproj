@@ -36,6 +36,7 @@
 		949EDA8619AD507000F4955B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 949EDA8419AD507000F4955B /* InfoPlist.strings */; };
 		949EDA8819AD507000F4955B /* CharruaSurfReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 949EDA8719AD507000F4955B /* CharruaSurfReportTests.m */; };
 		949EDA9219AD509C00F4955B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949EDA9119AD509C00F4955B /* Main.storyboard */; };
+		94B1265619C0EA44006A86F5 /* NMLocalizarListaPicosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B1265519C0EA44006A86F5 /* NMLocalizarListaPicosTableViewController.m */; };
 		94DE699619AE7606008C2F41 /* NMPicosListaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DE699519AE7606008C2F41 /* NMPicosListaTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		949EDA8519AD507000F4955B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		949EDA8719AD507000F4955B /* CharruaSurfReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharruaSurfReportTests.m; sourceTree = "<group>"; };
 		949EDA9119AD509C00F4955B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		94B1265419C0EA44006A86F5 /* NMLocalizarListaPicosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMLocalizarListaPicosTableViewController.h; sourceTree = "<group>"; };
+		94B1265519C0EA44006A86F5 /* NMLocalizarListaPicosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMLocalizarListaPicosTableViewController.m; sourceTree = "<group>"; };
 		94DE699419AE7606008C2F41 /* NMPicosListaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMPicosListaTableViewController.h; sourceTree = "<group>"; };
 		94DE699519AE7606008C2F41 /* NMPicosListaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMPicosListaTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,11 +155,13 @@
 			name = Picos;
 			sourceTree = "<group>";
 		};
-		948AF5DB19AD665C003DAF76 /* Ubicar */ = {
+		948AF5DB19AD665C003DAF76 /* Localizar */ = {
 			isa = PBXGroup;
 			children = (
+				94B1265419C0EA44006A86F5 /* NMLocalizarListaPicosTableViewController.h */,
+				94B1265519C0EA44006A86F5 /* NMLocalizarListaPicosTableViewController.m */,
 			);
-			name = Ubicar;
+			name = Localizar;
 			sourceTree = "<group>";
 		};
 		948AF5DD19AD666C003DAF76 /* Notificacion */ = {
@@ -207,7 +212,7 @@
 				949EDA9119AD509C00F4955B /* Main.storyboard */,
 				949EDA7019AD507000F4955B /* CharruaSurfReport.xcdatamodeld */,
 				948AF5DA19AD6655003DAF76 /* Picos */,
-				948AF5DB19AD665C003DAF76 /* Ubicar */,
+				948AF5DB19AD665C003DAF76 /* Localizar */,
 				948AF5DD19AD666C003DAF76 /* Notificacion */,
 				949EDA7319AD507000F4955B /* Images.xcassets */,
 				949EDA6519AD506F00F4955B /* Supporting Files */,
@@ -357,6 +362,7 @@
 				949EDA6F19AD507000F4955B /* NMAppDelegate.m in Sources */,
 				949EDA7219AD507000F4955B /* CharruaSurfReport.xcdatamodeld in Sources */,
 				9406D78819B0F41900CD93DC /* NMSalvarPicoViewController.m in Sources */,
+				94B1265619C0EA44006A86F5 /* NMLocalizarListaPicosTableViewController.m in Sources */,
 				9458433E19AF97620034E2B5 /* NMLocalizarPicoViewController.m in Sources */,
 				94DE699619AE7606008C2F41 /* NMPicosListaTableViewController.m in Sources */,
 				9465859C19BE5C460075E779 /* NMListaFechasPicoViewController.m in Sources */,

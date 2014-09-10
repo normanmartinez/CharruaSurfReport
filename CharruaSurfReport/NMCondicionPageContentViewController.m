@@ -14,7 +14,7 @@
 
 @implementation NMCondicionPageContentViewController
 
-@synthesize pico,fechaCondicion,latitud,longitud;
+@synthesize pico,fechaCondicion,latitud,longitud,color;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.page.backgroundColor=self.color;
+    
     self.lblNombrePico.text=self.nombrePico;
     self.lblFechaCondicion.text=self.fechaCondicion;
     self.lblHora.text=(NSString *)[pico valueForKey:@"time"];

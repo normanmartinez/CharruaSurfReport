@@ -14,7 +14,7 @@
 
 @implementation NMListaFechasPicoViewController
 
-@synthesize nombrePico, latitud, longitud,fechaCondicion,listaFechas;
+@synthesize nombrePico, latitud, longitud,fechaCondicion,listaFechas,color;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +32,13 @@
     //recupero lista de fechas para la geolocalización
     self.listaFechas=[self listadoCondicionesLatitud:self.latitud listadoCondicionesLongitud:self.longitud];
     [self cargaFechas];
+    self.btFecha1.backgroundColor=[UIColor orangeColor];
+    self.btFecha2.backgroundColor=[UIColor blueColor];
+    self.btFecha3.backgroundColor=[UIColor blackColor];
+    self.btFecha4.backgroundColor=[UIColor lightGrayColor];
+    self.btFecha5.backgroundColor=[UIColor redColor];
+    self.btFecha6.backgroundColor=[UIColor brownColor];
+    self.btFecha7.backgroundColor=[UIColor darkGrayColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +56,7 @@
     condicion.latitud=self.latitud;
     condicion.longitud=self.longitud;
     condicion.fechaCondicion=self.fechaCondicion;
+    condicion.color=self.color;
 }
 
 //Recupera el array de condiciones de un pico
@@ -93,29 +101,36 @@
 
 - (IBAction)btaFecha1:(id)sender {
     self.fechaCondicion=self.btFecha1.titleLabel.text;
+    self.color=[UIColor orangeColor];
 }
 
 - (IBAction)btaFecha2:(id)sender {
     self.fechaCondicion=self.btFecha2.titleLabel.text;
+    self.color=[UIColor blueColor];
 }
 
 - (IBAction)btaFecha3:(id)sender {
     self.fechaCondicion=self.btFecha3.titleLabel.text;
+    self.color=[UIColor blackColor];
 }
 
 - (IBAction)btaFecha4:(id)sender {
     self.fechaCondicion=self.btFecha4.titleLabel.text;
+    self.color=[UIColor lightGrayColor];
 }
 
 - (IBAction)btaFecha5:(id)sender {
     self.fechaCondicion=self.btFecha5.titleLabel.text;
+    self.color=[UIColor redColor];
 }
 
 - (IBAction)btaFecha6:(id)sender {
     self.fechaCondicion=self.btFecha6.titleLabel.text;
+    self.color=[UIColor brownColor];
 }
 
 - (IBAction)btaFecha7:(id)sender {
     self.fechaCondicion=self.btFecha7.titleLabel.text;
+    self.color=[UIColor darkGrayColor];
 }
 @end

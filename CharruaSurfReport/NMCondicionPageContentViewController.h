@@ -33,4 +33,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblVelocidadViento;
 
 @property (strong, nonatomic) NSDictionary *pico;
+
+@property (strong, nonatomic) IBOutlet UIView *page;
+@property (retain,nonatomic) UIColor *color;
+
 @end

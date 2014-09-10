@@ -1,30 +1,29 @@
 //
-//  NMPicosListaTableViewController.m
+//  NMLocalizarListaPicosTableViewController.m
 //  CharruaSurfReport
 //
-//  Created by norman martinez on 27/08/14.
+//  Created by norman martinez on 10/09/14.
 //  Copyright (c) 2014 NMDevelopment. All rights reserved.
 //
 
-#import "NMPicosListaTableViewController.h"
+#import "NMLocalizarListaPicosTableViewController.h"
 #import "NMAppDelegate.h"
 
-@interface NMPicosListaTableViewController ()
+@interface NMLocalizarListaPicosTableViewController ()
 
 @end
 
-@implementation NMPicosListaTableViewController
+@implementation NMLocalizarListaPicosTableViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     NSManagedObjectContext *aManagedObjectContext = ((NMAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
     self.managedObjectContext=aManagedObjectContext;
     
-   NSError *error = nil;
+    NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
         NSLog(@"Error! %@",error);
         abort();
@@ -60,35 +59,12 @@
     return cell;
 }
 
-// Método para editar y eliminar un Pico
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [self managedObjectContext];
-        self.pico = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [context deleteObject:self.pico];
-        
-        NSError *error = nil;
-        if (![context save:&error]) {
-            NSLog(@"Error! %@",error);
-        }
-    }
-}
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"cellFechas"])
-    {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Pico *picoSeleccionado =[self.fetchedResultsController objectAtIndexPath:indexPath];
-		NMListaFechasPicoViewController *condicion =[segue destinationViewController];
-		condicion.nombrePico=picoSeleccionado.nombrePico;
-        condicion.latitud=picoSeleccionado.latitud;
-        condicion.longitud=picoSeleccionado.longitud;
-    }
+
 }
 
 
@@ -99,12 +75,10 @@
         return _fetchedResultsController;
     }
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Pico"
-                                              inManagedObjectContext:[self managedObjectContext]];
-    [fetchRequest setEntity:entity];
+    NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"Pico" inManagedObjectContext:[self managedObjectContext]];
+    [fetchRequest setEntity:entity2];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"longitud"
-                                                                   ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"longitud" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
@@ -160,6 +134,7 @@
             break;
     }
 }
+
 
 
 @end

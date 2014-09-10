@@ -13,7 +13,7 @@
 @end
 
 @implementation NMCondicionPicoViewController
-@synthesize listaPicos,latitud,longitud,nombrePico,fechaCondicion;
+@synthesize listaPicos,latitud,longitud,nombrePico,fechaCondicion,color;
 @synthesize delegate;
 
 - (void)viewDidLoad
@@ -52,8 +52,10 @@
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
+
     
-    for (UIView *subview in self.pageViewController.view.subviews) {
+    for (UIView *subview in self.pageViewController.view.subviews)
+    {
         if ([subview isKindOfClass:[UIPageControl class]]) {
             UIPageControl *pageControl = (UIPageControl *)subview;
             pageControl.pageIndicatorTintColor = [UIColor grayColor];
@@ -107,6 +109,7 @@
     pageContentViewController.latitud=self.latitud;
     pageContentViewController.longitud=self.longitud;
     pageContentViewController.pageIndex = index;
+    pageContentViewController.color=self.color;
 
     pageContentViewController.fechaCondicion=self.fechaCondicion;
     
