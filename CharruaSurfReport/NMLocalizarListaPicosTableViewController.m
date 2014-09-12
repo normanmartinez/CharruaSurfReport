@@ -64,7 +64,10 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    Pico *picoSeleccionado =[self.fetchedResultsController objectAtIndexPath:indexPath];
+    NMRutaPicoViewController *ruta =[segue destinationViewController];
+    ruta.pico=picoSeleccionado;
 }
 
 

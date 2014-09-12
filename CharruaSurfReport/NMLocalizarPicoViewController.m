@@ -95,7 +95,8 @@
     //importante para ligar el delegado
     if ([[segue identifier] isEqualToString:@"salvarPico"])
     {
-        NMSalvarPicoViewController *salvarPico=[[navigationController viewControllers] objectAtIndex:0];        salvarPico.delegate=self;
+        NMSalvarPicoViewController *salvarPico=[[navigationController viewControllers] objectAtIndex:0];
+        salvarPico.delegate=self;
         salvarPico.nuevoPico=self.nuevoPico;
     }
 }

@@ -545,7 +545,7 @@
             </objects>
             <point key="canvasLocation" x="424" y="154"/>
         </scene>
-        <!--Localizar Lista Picos Table View Controller - Llegar al Pico-->
+        <!--Localizar Lista Picos Table View Controller - Rutas-->
         <scene sceneID="JtM-1p-xdj">
             <objects>
                 <tableViewController id="Tkm-qn-8OA" customClass="NMLocalizarListaPicosTableViewController" sceneMemberID="viewController">
@@ -562,7 +562,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="uKk-9G-SDm" kind="push" id="Bq4-uV-BdN"/>
+                                    <segue destination="uKk-9G-SDm" kind="push" identifier="cellLlegarPico" id="Bq4-uV-BdN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -571,7 +571,7 @@
                             <outlet property="delegate" destination="Tkm-qn-8OA" id="Wad-yp-Y4o"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Llegar al Pico" id="GJr-yY-gXK"/>
+                    <navigationItem key="navigationItem" title="Rutas" id="GJr-yY-gXK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7IR-y6-cOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -672,10 +672,10 @@
             </objects>
             <point key="canvasLocation" x="973" y="881"/>
         </scene>
-        <!--View Controller-->
+        <!--Ruta Pico View Controller - Ruta-->
         <scene sceneID="9on-cW-XhA">
             <objects>
-                <viewController id="uKk-9G-SDm" customClass="SCViewController" sceneMemberID="viewController">
+                <viewController id="uKk-9G-SDm" customClass="NMRutaPicoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Lo-3g-nOE"/>
                         <viewControllerLayoutGuide type="bottom" id="L0p-u4-JhF"/>
@@ -711,27 +711,27 @@
                             <constraint firstAttribute="trailing" secondItem="rJf-LN-KMw" secondAttribute="trailing" constant="20" symbolic="YES" id="zOd-xl-kwo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MwN-21-6EV"/>
+                    <navigationItem key="navigationItem" title="Ruta" id="MwN-21-6EV"/>
                     <connections>
                         <outlet property="activityIndicator" destination="5ZG-9x-oQC" id="Yi2-km-AwK"/>
-                        <outlet property="mapView" destination="F7w-of-9a7" id="lj4-1H-bZe"/>
-                        <outlet property="routeDetailsButton" destination="rJf-LN-KMw" id="uor-XG-UDj"/>
+                        <outlet property="detalleRuta" destination="rJf-LN-KMw" id="brS-w4-aWN"/>
+                        <outlet property="mapView" destination="F7w-of-9a7" id="JEh-3w-5Mr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npk-CK-CV9" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1981" y="154"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Pasos Ruta Pico Table View Controller - Pasos-->
         <scene sceneID="JoS-Na-Wg4">
             <objects>
-                <tableViewController id="g49-Bn-MGb" sceneMemberID="viewController">
+                <tableViewController id="g49-Bn-MGb" customClass="NMPasosRutaPicoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rGP-0H-cO5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GNN-zN-6ze">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="GNN-zN-6ze">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GNN-zN-6ze" id="W8A-hP-0xR">
@@ -748,16 +748,16 @@
                             <outlet property="delegate" destination="g49-Bn-MGb" id="cbb-jf-FLo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gBs-pP-cDr"/>
+                    <navigationItem key="navigationItem" title="Pasos" id="gBs-pP-cDr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Bd-IU-7W2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2439" y="154"/>
         </scene>
-        <!--Individual Step View Controller-->
+        <!--Detalle Paso View Controller - Detalle-->
         <scene sceneID="CNJ-P2-QGM">
             <objects>
-                <viewController id="NTb-uW-X2d" customClass="SCIndividualStepViewController" sceneMemberID="viewController">
+                <viewController id="NTb-uW-X2d" customClass="NMDetallePasoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rB8-NM-wg5"/>
                         <viewControllerLayoutGuide type="bottom" id="hs9-iY-eKW"/>
@@ -814,11 +814,11 @@
                             <constraint firstAttribute="trailing" secondItem="3tb-FP-y9x" secondAttribute="trailing" id="yMe-o4-SrW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aZm-RD-QgJ"/>
+                    <navigationItem key="navigationItem" title="Detalle" id="aZm-RD-QgJ"/>
                     <connections>
-                        <outlet property="distanceLabel" destination="BVV-oc-Hdo" id="d4L-4U-rwk"/>
-                        <outlet property="instructionsTextView" destination="KBR-CS-VeR" id="1HL-1f-NkW"/>
-                        <outlet property="mapView" destination="3tb-FP-y9x" id="iRp-MM-azW"/>
+                        <outlet property="distanceLabel" destination="BVV-oc-Hdo" id="Ic3-on-sVZ"/>
+                        <outlet property="instructionsTextView" destination="KBR-CS-VeR" id="Pe4-7v-nkT"/>
+                        <outlet property="mapView" destination="3tb-FP-y9x" id="Pg3-cH-4EG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPa-wv-bho" userLabel="First Responder" sceneMemberID="firstResponder"/>

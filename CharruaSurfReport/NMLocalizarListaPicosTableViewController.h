@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Pico.h"
+#import "NMRutaPicoViewController.h"
 
 @interface NMLocalizarListaPicosTableViewController : UITableViewController <NSFetchedResultsControllerDelegate,UITableViewDataSource,UITableViewDelegate>
 
