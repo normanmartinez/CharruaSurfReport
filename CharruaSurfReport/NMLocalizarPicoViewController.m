@@ -45,12 +45,20 @@
 //Recupera la posición actual del usuario
 -(void)getCurrentPosition
 {
-    locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    [self.locationManager startUpdatingLocation];
-    
-    self.map.showsUserLocation = YES;
+    @try
+    {
+        locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        [self.locationManager startUpdatingLocation];
+        [self.locationManager requestWhenInUseAuthorization];
+        self.map.showsUserLocation = YES;
+    }
+    @catch (NSException *exception)
+    {
+        UIAlertView *alerta =[[UIAlertView alloc]initWithTitle:@"Exception: " message:exception.description delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil,nil];
+        [alerta show];
+    }
 }
 
 /*
@@ -79,13 +87,21 @@
 //valido la latitud y longitud del centro
 - (IBAction)agregarPico:(id)sender
 {
-    CLLocationCoordinate2D centre = [self.map centerCoordinate];
-    //latitudActual=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.latitude];
-    //longitudActual= (NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.longitude];
-    
-    self.nuevoPico=(Pico *)[NSEntityDescription insertNewObjectForEntityForName:@"Pico" inManagedObjectContext:[self managedObjectContext]];
-    self.nuevoPico.latitud=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.latitude];
-    self.nuevoPico.longitud=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.longitude];
+    @try
+    {
+        CLLocationCoordinate2D centre = [self.map centerCoordinate];
+        //latitudActual=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.latitude];
+        //longitudActual= (NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.longitude];
+        
+        self.nuevoPico=(Pico *)[NSEntityDescription insertNewObjectForEntityForName:@"Pico" inManagedObjectContext:[self managedObjectContext]];
+        self.nuevoPico.latitud=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.latitude];
+        self.nuevoPico.longitud=(NSDecimalNumber *)[NSDecimalNumber numberWithDouble:centre.longitude];
+    }
+    @catch (NSException *exception)
+    {
+        UIAlertView *alerta =[[UIAlertView alloc]initWithTitle:@"Exception: " message:exception.description delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil,nil];
+        [alerta show];
+    }
 }
 
 #pragma mark - Segue

@@ -62,40 +62,48 @@
 //Metodo que, a partir de la lat y long genera la ruta en el mapa
 -(void)generarRutaLatidud:(double)lat RutaLongitud:(double)lon
 {
-    self.activityIndicator.hidden = NO;
-    [self.activityIndicator startAnimating];
-    self.detalleRuta.enabled = NO;
-    
-    MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
-    
-    MKMapItem *source = [MKMapItem mapItemForCurrentLocation];
-    [directionsRequest setSource:source];
-    
-    // marca el destino
-    CLLocationCoordinate2D destinationCoords = CLLocationCoordinate2DMake(lat,lon);
-    MKPlacemark *destinationPlacemark = [[MKPlacemark alloc] initWithCoordinate:destinationCoords addressDictionary:nil];
-    MKMapItem *destination = [[MKMapItem alloc] initWithPlacemark:destinationPlacemark];
-    [directionsRequest setDestination:destination];
-    
-    MKDirections *directions = [[MKDirections alloc] initWithRequest:directionsRequest];
-    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+    @try
+    {
+        self.activityIndicator.hidden = NO;
+        [self.activityIndicator startAnimating];
+        self.detalleRuta.enabled = NO;
         
-        self.activityIndicator.hidden = YES;
-        [self.activityIndicator stopAnimating];
+        MKDirectionsRequest *directionsRequest = [MKDirectionsRequest new];
         
-        //Maneja el resultado
-        if (error) {
-            UIAlertView *alerta =[[UIAlertView alloc]initWithTitle:@"Nuevo Pico: " message:@"No se pudo encontrar la ruta!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil,nil];
-            [alerta show];
+        MKMapItem *source = [MKMapItem mapItemForCurrentLocation];
+        [directionsRequest setSource:source];
+        
+        // marca el destino
+        CLLocationCoordinate2D destinationCoords = CLLocationCoordinate2DMake(lat,lon);
+        MKPlacemark *destinationPlacemark = [[MKPlacemark alloc] initWithCoordinate:destinationCoords addressDictionary:nil];
+        MKMapItem *destination = [[MKMapItem alloc] initWithPlacemark:destinationPlacemark];
+        [directionsRequest setDestination:destination];
+        
+        MKDirections *directions = [[MKDirections alloc] initWithRequest:directionsRequest];
+        [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
             
-            return;
-        }
-        
-        self.detalleRuta.enabled = YES;
-        self.detalleRuta.hidden = NO;
-        _currentRoute = [response.routes firstObject];
-        [self plotRouteOnMap:_currentRoute];
-    }];
+            self.activityIndicator.hidden = YES;
+            [self.activityIndicator stopAnimating];
+            
+            //Maneja el resultado
+            if (error) {
+                UIAlertView *alerta =[[UIAlertView alloc]initWithTitle:@"Nuevo Pico: " message:@"No se pudo encontrar la ruta!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil,nil];
+                [alerta show];
+                
+                return;
+            }
+            
+            self.detalleRuta.enabled = YES;
+            self.detalleRuta.hidden = NO;
+            _currentRoute = [response.routes firstObject];
+            [self plotRouteOnMap:_currentRoute];
+        }];
+    }
+    @catch (NSException *exception)
+    {
+        UIAlertView *alerta =[[UIAlertView alloc]initWithTitle:@"Exception: " message:exception.description delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil,nil];
+        [alerta show];
+    }
 }
 
 #pragma mark - Utility Methods

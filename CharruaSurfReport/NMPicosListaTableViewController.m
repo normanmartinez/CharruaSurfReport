@@ -17,13 +17,14 @@
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
+int row;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     NSManagedObjectContext *aManagedObjectContext = ((NMAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
     self.managedObjectContext=aManagedObjectContext;
-    
+    row=0;
    NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
         NSLog(@"Error! %@",error);
@@ -55,6 +56,14 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     self.pico = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+     NSLog(@"Selected section:%i row:%i", (int)indexPath.section, (int)indexPath.row);
+    
+    if (indexPath.section%2 == 0)
+    {
+        cell.backgroundColor = [UIColor lightGrayColor];
+    }
+    
     cell.textLabel.text = self.pico.nombrePico;
     
     return cell;
