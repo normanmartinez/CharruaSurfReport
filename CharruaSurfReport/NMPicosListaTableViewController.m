@@ -17,15 +17,14 @@
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
-int row;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     NSManagedObjectContext *aManagedObjectContext = ((NMAppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
     self.managedObjectContext=aManagedObjectContext;
-    row=0;
-   NSError *error = nil;
+    
+    NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
         NSLog(@"Error! %@",error);
         abort();
@@ -56,16 +55,7 @@ int row;
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     self.pico = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-     NSLog(@"Selected section:%i row:%i", (int)indexPath.section, (int)indexPath.row);
-    
-    if (indexPath.section%2 == 0)
-    {
-        cell.backgroundColor = [UIColor lightGrayColor];
-    }
-    
     cell.textLabel.text = self.pico.nombrePico;
-    
     return cell;
 }
 
@@ -100,11 +90,12 @@ int row;
     }
 }
 
-
 #pragma mark -
 #pragma mark Fetched Results Controller section
--(NSFetchedResultsController *) fetchedResultsController {
-    if (_fetchedResultsController != nil) {
+-(NSFetchedResultsController *) fetchedResultsController
+{
+    if (_fetchedResultsController != nil)
+    {
         return _fetchedResultsController;
     }
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -124,27 +115,37 @@ int row;
     return _fetchedResultsController;
 }
 
--(void) controllerWillChangeContent:(NSFetchedResultsController *)controller {
+-(void) controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
     [self.tableView beginUpdates];
 }
 
--(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
+-(void) controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
     [self.tableView endUpdates];
 }
+
 -(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
     
     UITableView *tableView = self.tableView;
     
-    switch (type) {
+    switch (type)
+    {
         case NSFetchedResultsChangeInsert:
+        {
             [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
             break;
             
         case NSFetchedResultsChangeDelete:
+        {
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        }
             break;
             
-        case NSFetchedResultsChangeUpdate: {
+        case NSFetchedResultsChangeUpdate:
+        {
             Pico *pico = [self.fetchedResultsController objectAtIndexPath:indexPath];
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
             cell.textLabel.text = pico.nombrePico;
@@ -159,8 +160,10 @@ int row;
     
 }
 
--(void) controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-    switch (type) {
+-(void) controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+{
+    switch (type)
+    {
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
